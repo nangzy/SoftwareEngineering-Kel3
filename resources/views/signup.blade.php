@@ -8,11 +8,14 @@
     <div class="container-fluid d-flex flex-column justify-content-center col-10 mt-5">
         <div class="fs-1 d-flex justify-content-center mb-2">
             <div style="color: #ffffff">
-                Welcome to&nbsp;
+                Get Your&nbsp;
             </div>
             
             <div class="tulisan-merah-terang">
-                E-SCORE TV
+                E-SCORE TV&nbsp;
+            </div>
+            <div style="color: #ffffff">
+                Account
             </div>
         </div>
 
