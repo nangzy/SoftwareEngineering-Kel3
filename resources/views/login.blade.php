@@ -1,5 +1,9 @@
 @extends('template1')
 
+@section('header')
+    <button type="button" class="btn btn-outline-danger"> <img src="/images/icons/Signup.png" alt="signup"> Sign Up</button>
+@endsection
+
 @section('content')
     <div class="container-fluid d-flex flex-column justify-content-center col-10 mt-5">
         <div class="fs-1 d-flex justify-content-center mb-2">
@@ -16,16 +20,16 @@
             Sign into The E-score TV with your EST account
         </div>
         
-        <div class="container-fluid rounded-4 d-flex flex-column col-4 warna-abu" style="background-color: #5a2225">
+        <div class="container-fluid rounded-4 d-flex flex-column col-4 warna-krem" style="background-color: #5a2225">
             <form>
                 <div class="mt-2 p-3">
                   <label for="InputEmail1" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="InputEmail1">
+                  <input type="email" class="form-control" id="InputEmail1" placeholder="name@example.com">
                   
                 </div>
                 <div class="mb-3 p-3">
                   <label for="InputPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="InputPassword1">
+                  <input type="password" class="form-control" id="InputPassword1" placeholder="**********">
                 </div>
 
                 <div class="fs-5 d-flex justify-content-center" style="color: white">

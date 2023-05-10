@@ -18,9 +18,9 @@
             <img src="/images/logo1.png" alt="logo" class="img-fluid">
             &nbsp;E-SCORE TV
         </div>
-
+    
         <div>
-            <button type="button" class="btn btn-outline-danger"> <img src="/images/icons/Signup.png" alt="signup"> Sign Up</button>
+            @yield('header')
         </div>
     </div>
 
