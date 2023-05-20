@@ -13,7 +13,7 @@
 </head>
 <body style="background-color: #0f1722">
     {{-- header --}}
-    <div class="container d-flex justify-content-between pt-3 align-items-center">
+    <div class="container-fluid col-11 d-flex justify-content-between pt-3 align-items-center">
         <div class="warna-krem fs-4 d-flex flex-row align-items-end">
             <img src="/images/logo1.png" alt="logo" class="img-fluid">
             &nbsp;E-SCORE TV

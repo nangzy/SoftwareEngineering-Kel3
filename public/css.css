@@ -7,7 +7,11 @@
 }
 
 .bg-merah-terang {
-    background-color: #ff4653;
+    background-color: #ff4654;
+}
+
+.bg-merah-terang-20 {
+    background-color: rgba(255, 70, 84, 0.2);
 }
 
 .warna-merah-tengah {
@@ -24,6 +28,10 @@
 
 .warna-item {
     background-color: #0f1722;
+}
+
+.stroke-putih {
+    -webkit-text-stroke: .5px white;
 }
 
 ::placeholder {
