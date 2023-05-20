@@ -14,5 +14,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('home');
+});
+
+Route::get('/forgot-password', function () {
+    return view('forgotpw');
+});
+
+Route::get('/forgot-password-confirm', function () {
     return view('forgotpw-confirm');
+});
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::get('/sign-up', function () {
+    return view('signup');
+});
+
+Route::get('/sign-up-confirm', function () {
+    return view('signup-confirm');
 });
