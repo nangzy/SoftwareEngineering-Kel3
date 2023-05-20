@@ -36,3 +36,8 @@ Route::get('/sign-up', function () {
 Route::get('/sign-up-confirm', function () {
     return view('signup-confirm');
 });
+
+Route::get('/success-payment-ticket', function () {
+    return view('successpaymentTicket');
+});
+

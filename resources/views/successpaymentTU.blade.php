@@ -1,4 +1,4 @@
-@extends('template1')
+@extends('main.template1')
 
 @section('content')
     <div class="container-fluid d-flex flex-column justify-content-center col-10 mt-5">
@@ -26,7 +26,7 @@
             </div>
             
             <div class="d-flex justify-content-center mb-2  ">
-                <button type="submit" class="btn btn-lg btn-danger shadow m-3 fw-semibold" style="--bs-btn-padding-x: 3rem">Home</button>
+                <a href="/" class="text-decoration-none"><button type="submit" class="btn btn-lg btn-danger shadow m-3 fw-semibold" style="--bs-btn-padding-x: 3rem"> Home</button></a>
             </div>
         </div>
     </div>

@@ -1,4 +1,4 @@
-@extends('template1')
+@extends('main.template1')
 
 {{-- bisa buat merch, ticket, TU mole, TU valo --}}
 

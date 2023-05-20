@@ -1,4 +1,4 @@
-@extends('template1')
+@extends('main.template1')
 
 @section('content')
     <div class="fs-5 fw-bold d-flex align-items-center mb-4 text-light col-10 container-fluid">
