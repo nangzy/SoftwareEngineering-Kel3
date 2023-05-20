@@ -29,3 +29,7 @@
 ::placeholder {
     color: #a3b8bf;
 }
+
+.pressed-icons:hover {
+    opacity: 0.6;
+}
