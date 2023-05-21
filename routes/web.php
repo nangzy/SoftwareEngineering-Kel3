@@ -41,3 +41,7 @@ Route::get('/success-payment-ticket', function () {
     return view('successpaymentTicket');
 });
 
+Route::get('/buy-ticket', function () {
+    return view('buyTicket');
+});
+
