@@ -6,8 +6,29 @@
             <a href=""><img src="/images/Icons/Vector.png" alt="back"></a> &nbsp;
         </div>
     
-        <div class="col-5">
-            <img src="/images/Matches/Ticket1.png" alt="ticket" class="img-fluid">
+        <div id="carouselExampleCaptions" class="carousel slide">
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span aria-hidden="true"><img src="/images/Icons/kiri.png" alt="back"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            </div>
+            {{-- loop buat gambar --}}
+            {{-- entah kenapa carousel nya ga smooth --}}
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="/images/Merch/baju-depan.png" class="d-block w-100" alt="baju-depan">
+              </div>
+              <div class="carousel-item">
+                <img src="/images/Merch/baju-blkg.png" class="d-block w-100" alt="baju-blkg">
+              </div>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span aria-hidden="true"><img src="/images/Icons/kanan.png" alt="next"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
         </div>
 
         <div class="container-fluid rounded-4 col-5 bg-merah-terang-20 warna-abu">
@@ -17,13 +38,11 @@
             </div>
             <div class="fs-2 stroke-putih">
                 {{-- Judul --}}
-                MPL ID REGULER SEASON <br>
-                {{-- Sub-judul --}}
-                DAY 1 MATCH 1 - GEEK VS AE
+                EVOS Jersey
             </div>
             <div class="fs-3 tulisan-merah-terang pt-2 pb-2">
                 {{-- harga  --}}
-                Rp75.000
+                Rp150.000
             </div>
             <div class="border-bottom border-white stroke-putih fs-6 fw-light pb-3">
                 <form>
@@ -38,22 +57,27 @@
                 </form>
             </div>
             <div class="pt-2">
-                <ul>
-                    {{-- loop content --}}
+              {{-- loop disini --}}
+                <div class="mb-3">
+                  Category:
+                </div>
+                <div>
+                  tes 123
+                </div>
+
+                <div class="mb-3">
+                    Item Description:
+                </div>
+
+                <div>
+                  <ul type="square">
                     <li>
-                        REGULER SEASON DAY 1 MATCH 1 - GEEK VS AE (Legend / 3 Mar 2023)
+                      tes 123
                     </li>
-                </ul>
+                  </ul>
+                </div>
             </div>
             <div class="d-flex align-items-center justify-content-end warna-abu stroke-putih">
-                <div class="col-6">
-                    <select class="form-select btn btn-lg btn-danger text-light fw-semibold" aria-label=".form-select payment">
-                        <option selected>Payment Method</option>
-                        <option value="1">QRIS</option> {{-- nama payment method bisa berubah --}}
-                        <option value="2">DANA</option>
-                        <option value="3">OVO</option>
-                    </select>
-                </div>
                 <div class="">
                     <a href="/payment-page" class="text-decoration-none"><button type="submit" class="btn btn-lg btn-danger shadow m-3 fw-semibold text-light" style="--bs-btn-padding-x: 1.5rem"> Buy Now </button></a> 
                 </div>

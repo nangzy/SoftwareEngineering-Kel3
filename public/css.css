@@ -49,3 +49,7 @@ body {
 .pressed-icons:hover {
     opacity: 0.6;
 }
+
+.form-select {
+    padding: 0.1rem;
+}

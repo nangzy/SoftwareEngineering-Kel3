@@ -45,3 +45,11 @@ Route::get('/buy-ticket', function () {
     return view('buyTicket');
 });
 
+Route::get('/buy-merch', function () {
+    return view('buyMerch');
+});
+
+Route::get('/payment-page', function () {
+    return view('paymentPage');
+});
+
