@@ -53,3 +53,10 @@ Route::get('/payment-page', function () {
     return view('paymentPage');
 });
 
+Route::get('/modal', function () {
+    return view('modal');
+});
+
+Route::get('/user-profile', function () {
+    return view('userProfile');
+});

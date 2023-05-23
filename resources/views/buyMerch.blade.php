@@ -46,14 +46,22 @@
             </div>
             <div class="border-bottom border-white stroke-putih fs-6 fw-light pb-3">
                 <form>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="warna-abu">
-                            <label for="InputQuantity" class="form-label">QUANTITY</label>
-                        </div>
-                        <div class="col-1">
-                            <input type="text" class="form-control" id="InputQuantity" placeholder="1">
-                        </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="warna-abu fw-light">
+                        SIZE
                     </div>
+                    <div class="">
+                      {{-- ukurannya --}}
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="warna-abu fw-light">
+                      <label for="InputQuantity" class="form-label">QUANTITY</label>
+                  </div>
+                  <div class="col-1">
+                    <input type="text" class="form-control" id="InputQuantity" placeholder="1">
+                  </div>
+                </div>
                 </form>
             </div>
             <div class="pt-2">
@@ -78,9 +86,9 @@
                 </div>
             </div>
             <div class="d-flex align-items-center justify-content-end warna-abu stroke-putih">
-                <div class="">
-                    <a href="/payment-page" class="text-decoration-none"><button type="submit" class="btn btn-lg btn-danger shadow m-3 fw-semibold text-light" style="--bs-btn-padding-x: 1.5rem"> Buy Now </button></a> 
-                </div>
+              <div class="">
+                <a href="/payment-page" class="text-decoration-none"><button type="submit" class="btn btn-lg btn-danger shadow m-3 fw-semibold text-light" style="--bs-btn-padding-x: 1.5rem"> Buy Now </button></a> 
+              </div>
             </div>
         </div>
     </div>

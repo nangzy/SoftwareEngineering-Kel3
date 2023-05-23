@@ -28,7 +28,7 @@
             <div class="border-bottom border-white stroke-putih fs-6 fw-light pb-3">
                 <form>
                     <div class="d-flex justify-content-between align-items-center">
-                        <div class="warna-abu">
+                        <div class="warna-abu fw-light">
                             <label for="InputQuantity" class="form-label">QUANTITY</label>
                         </div>
                         <div class="col-1">
