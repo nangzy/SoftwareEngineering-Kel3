@@ -60,3 +60,7 @@ Route::get('/modal', function () {
 Route::get('/user-profile', function () {
     return view('userProfile');
 });
+
+Route::get('/top-up', function () {
+    return view('topUp');
+});
