@@ -64,3 +64,7 @@ Route::get('/user-profile', function () {
 Route::get('/top-up', function () {
     return view('topUp');
 });
+
+Route::get('/detail-buy-merch', function () {
+    return view('detailBuyMerch');
+});

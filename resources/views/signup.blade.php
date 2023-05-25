@@ -32,7 +32,6 @@
                 <div class="mt-2 p-3">
                     <label for="InputEmail1" class="form-label">Email address</label>
                     <input type="email" class="form-control" id="InputEmail1" placeholder="name@example.com">
-
                 </div>
                 <div class="p-3">
                     <label for="InputPassword1" class="form-label">Password</label>
