@@ -68,3 +68,7 @@ Route::get('/top-up', function () {
 Route::get('/detail-buy-merch', function () {
     return view('detailBuyMerch');
 });
+
+Route::get('/tournament', function () {
+    return view('tournament');
+});
