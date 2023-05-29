@@ -14,6 +14,10 @@ body {
     color: #ff4654;
 }
 
+.tulisan-biru{
+    color: #0066FF;
+}
+
 .bg-merah-terang {
     background-color: #ff4654;
 }
@@ -52,4 +56,44 @@ body {
 
 .form-select {
     padding: 0.1rem;
+}
+
+.valo-btn a{
+    margin: 10px;
+    background-color: #FF4654;
+    color: black;
+    padding: 5px;
+    border-radius: 10%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.news-foot{
+    color: white;
+    background-color: #51090D;
+    padding: 40px;
+}
+
+.border-abu-25{
+    --bs-border-color: #a3b8bf;
+    --bs-border-opacity: .25;
+}
+
+.border-merah-75{
+    background-color: rgba(81, 9, 13, 0.75);
+}
+
+.border-merah-20{
+    background-color: rgba(255, 70, 84, 0.2);
+    color: #FF4654;
+    border-color: #FF4654;
+}
+
+.score{
+    margin-left: 145px;
+}
+
+.soft-light{
+    background-color: #5a2225;
+    mix-blend-mode: soft-light;
 }
