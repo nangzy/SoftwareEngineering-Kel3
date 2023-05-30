@@ -36,3 +36,71 @@ Route::get('/sign-up', function () {
 Route::get('/sign-up-confirm', function () {
     return view('signup-confirm');
 });
+
+Route::get('/success-payment-ticket', function () {
+    return view('successpaymentTicket');
+});
+
+Route::get('/buy-ticket', function () {
+    return view('buyTicket');
+});
+
+Route::get('/buy-merch', function () {
+    return view('buyMerch');
+});
+
+Route::get('/payment-page', function () {
+    return view('paymentPage');
+});
+
+Route::get('/modal', function () {
+    return view('modal');
+});
+
+Route::get('/user-profile', function () {
+    return view('userProfile');
+});
+
+Route::get('/top-up', function () {
+    return view('topUp');
+});
+
+Route::get('/detail-buy-merch', function () {
+    return view('detailBuyMerch');
+});
+
+Route::get('/tournament', function () {
+    return view('tournament');
+});
+
+Route::get('/news', function () {
+    return view('news');
+});
+
+Route::get('/topup-cat', function () {
+    return view('topup-cat');
+});
+
+Route::get('/detail-transaction-merch', function () {
+    return view('detailTransactionMerch');
+});
+
+Route::get('/detail-transaction-ticket', function () {
+    return view('detailTransactionTicket');
+});
+
+Route::get('/detail-transaction-topup', function () {
+    return view('detailTransactionTopup');
+});
+
+Route::get('/valo-tour', function () {
+    return view('valorant');
+});
+
+Route::get('/mole-tour', function () {
+    return view('mobile-legend');
+});
+
+Route::get('/valo-detail', function () {
+    return view('valodetail');
+});
