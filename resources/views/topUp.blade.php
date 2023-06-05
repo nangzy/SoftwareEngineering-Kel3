@@ -1,5 +1,9 @@
 @extends('main.template1')
 
+@section('header')
+    @include('header.header-after')
+@endsection
+
 @section('content')
     <div class="container-fluid col-11 mt-3 mb-3 d-flex justify-content-between align-items-center">
         <div class="">
@@ -106,4 +110,8 @@
         </div>
     </div>
 
+@endsection
+
+@section('footer')
+    @include('footer.footer-2')
 @endsection

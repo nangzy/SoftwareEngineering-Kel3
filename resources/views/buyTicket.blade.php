@@ -1,5 +1,9 @@
 @extends('main.template1')
 
+@section('header')
+    @include('header.header-after')
+@endsection
+
 @section('content')
     <div class="container-fluid mt-5 d-flex col-11">
         <div class="mt-3 mb-3">
@@ -63,3 +67,7 @@
 @endsection
 
 {{-- belom di dropdown sama quantitynya belom bisa nambah --}}
+
+@section('footer')
+    @include('footer.footer-2')
+@endsection

@@ -1,5 +1,9 @@
 @extends('main.template1')
 
+@section('header')
+    @include('header.header-after')
+@endsection
+
 @section('content')
     <div class="container-fluid col-11">
         <a href=""><img src="/images/Icons/Vector.png" alt="back"></a> &nbsp;
@@ -171,4 +175,8 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('footer')
+    @include('footer.footer-2')
 @endsection

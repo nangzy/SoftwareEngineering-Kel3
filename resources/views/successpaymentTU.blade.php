@@ -12,7 +12,7 @@
             </div>
         </div>
         
-        <div class="container-fluid rounded-4 d-flex flex-column col-5 warna-abu mt-3" style="background-color: #5a2225">
+        <div class="container-fluid rounded-4 d-flex flex-column col-5 warna-abu mt-3 bg-merah-terang-20">
             <div class="justify-content-center d-flex mt-3">
                 <img src="/images/icons/clipboardtick.png" alt="clipboard" class="col-4">
             </div>
@@ -30,4 +30,8 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('footer')
+    @include('footer.footer-2')
 @endsection

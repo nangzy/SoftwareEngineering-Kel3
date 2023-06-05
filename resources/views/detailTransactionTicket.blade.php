@@ -1,5 +1,9 @@
 @extends('main.template1')
 
+@section('header')
+    @include('header.header-after')
+@endsection
+
 @section('content')
 
     <div class="container-fluid col-11 mb-4">
@@ -72,4 +76,8 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('footer')
+    @include('footer.footer-2')
 @endsection

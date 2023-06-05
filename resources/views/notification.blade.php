@@ -1,5 +1,9 @@
 @extends('main.template1')
 
+@section('header')
+    @include('header.header-after')
+@endsection
+
 @section('content')
     <div class="fs-5 fw-bold d-flex align-items-center mb-4 text-light col-10 container-fluid">
         <img src="/images/Icons/notifications.png" alt="faq">
@@ -23,4 +27,8 @@
             
         </div>
     </div>
+@endsection
+
+@section('footer')
+    @include('footer.footer-2')
 @endsection

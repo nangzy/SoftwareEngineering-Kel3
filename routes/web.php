@@ -21,6 +21,10 @@ Route::get('/forgot-password', function () {
     return view('forgotpw');
 });
 
+Route::get('/notification', function () {
+    return view('notification');
+});
+
 Route::get('/forgot-password-confirm', function () {
     return view('forgotpw-confirm');
 });
@@ -51,6 +55,10 @@ Route::get('/buy-merch', function () {
 
 Route::get('/payment-page', function () {
     return view('paymentPage');
+});
+
+Route::get('/fail-payment', function () {
+    return view('failPayment');
 });
 
 Route::get('/modal', function () {

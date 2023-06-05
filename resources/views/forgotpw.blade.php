@@ -16,7 +16,7 @@
             Reset Your Password
         </div>
 
-        <div class="container-fluid rounded-4 d-flex flex-column col-4 warna-krem" style="background-color: #5a2225">
+        <div class="container-fluid rounded-4 d-flex flex-column col-4 warna-krem bg-merah-terang-20">
             <form>
                 <div class="mt-2 p-2">
                     Please Input Your Active Email And Your New Password

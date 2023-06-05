@@ -4,7 +4,7 @@
     <div class="container-fluid d-flex flex-column justify-content-center col-10 mt-5">
         <div class="fs-1 d-flex justify-content-center mb-2">
             <div style="color: #ffffff">
-                Special Thanks From&nbsp;
+                Message From&nbsp;
             </div>
             
             <div class="tulisan-merah-terang">
@@ -14,15 +14,15 @@
         
         <div class="container-fluid rounded-4 d-flex flex-column col-5 warna-abu mt-3 bg-merah-terang-20">
             <div class="justify-content-center d-flex mt-3">
-                <img src="/images/icons/clipboardtick.png" alt="clipboard" class="col-4">
+                <img src="/images/icons/fail.png" alt="clipboard" class="col-4">
             </div>
 
             <div class="justify-content-center d-flex mb-2 fs-2 text-center mt-3 fw-semibold">
-                Your purchase has been processed.
+                Your purchase has been terminated.
             </div>
 
             <div class="justify-content-center d-flex mb-2 fs-4 text-center mt-3 fw-semibold" style="color: #B1B1B1">
-                Please check your notifications to follow up of your order
+                You have failed to complete the payment during the given time. 
             </div>
             
             <div class="d-flex justify-content-center mb-2  ">
@@ -33,5 +33,5 @@
 @endsection
 
 @section('footer')
-    @include('footer.footer-2')
+    @include('footer.footer-1')
 @endsection

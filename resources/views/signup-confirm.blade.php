@@ -19,7 +19,7 @@
             Sign into The E-score TV with your EST account
         </div>
 
-        <div class="container-fluid rounded-4 d-flex flex-column col-4 warna-abu" style="background-color: #5a2225">
+        <div class="container-fluid rounded-4 d-flex flex-column col-4 warna-abu bg-merah-terang-20">
             <div class="justify-content-center d-flex mt-5">
                 <img src="/images/icons/clipboardtick.png" alt="clipboard" class="col-4">
             </div>

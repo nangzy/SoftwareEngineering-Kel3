@@ -1,6 +1,5 @@
 @extends('main.template1')
 
-
 @section('content')
     <div class="container-fluid d-flex flex-column justify-content-center col-10 mt-5">
         <div class="fs-1 d-flex justify-content-center mb-2">
@@ -17,7 +16,7 @@
             Reset Your Password
         </div>
 
-        <div class="container-fluid rounded-4 d-flex flex-column col-4 warna-abu" style="background-color: #5a2225">
+        <div class="container-fluid rounded-4 d-flex flex-column col-4 warna-abu bg-merah-terang-20">
             <div class="justify-content-center d-flex mt-5">
                 <img src="/images/icons/clipboardtick.png" alt="clipboard" class="col-4">
             </div>
