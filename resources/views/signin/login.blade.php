@@ -2,8 +2,8 @@
 
 @section('header')
     <li class="nav-item">
-        <a href="/login" type="button" class="btn btn-outline-danger"><img src="/images/icons/Login.png" alt="login">
-            Log In
+        <a href="/sign-up" type="button" class="btn btn-outline-danger"><img src="/images/icons/Signup.png"
+                                                                             alt="signup"> Sign Up
         </a>
     </li>
 @endsection
@@ -12,14 +12,11 @@
     <div class="container-fluid d-flex flex-column justify-content-center col-10 mt-5">
         <div class="fs-1 d-flex justify-content-center mb-2">
             <div style="color: #ffffff">
-                Get Your&nbsp;
+                Welcome to&nbsp;
             </div>
 
             <div class="tulisan-merah-terang">
-                E-SCORE TV&nbsp;
-            </div>
-            <div style="color: #ffffff">
-                Account
+                E-SCORE TV
             </div>
         </div>
 
@@ -27,18 +24,15 @@
             Sign into The E-score TV with your EST account
         </div>
 
-        <div class="container-fluid rounded-4 d-flex flex-column col-4 warna-krem" style="background-color: #5a2225">
+        <div class="container-fluid rounded-4 d-flex flex-column col-4 warna-krem bg-merah-terang-20">
             <form>
                 <div class="mt-2 p-3">
                     <label for="InputEmail1" class="form-label">Email address</label>
                     <input type="email" class="form-control" id="InputEmail1" placeholder="name@example.com">
-                </div>
-                <div class="p-3">
-                    <label for="InputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="InputPassword1" placeholder="**********">
+
                 </div>
                 <div class="mb-3 p-3">
-                    <label for="InputPassword1" class="form-label">Confirm Password</label>
+                    <label for="InputPassword1" class="form-label">Password</label>
                     <input type="password" class="form-control" id="InputPassword1" placeholder="**********">
                 </div>
 
@@ -51,16 +45,23 @@
                     google sign in, etc.
                 </div>
 
+                <div class="mb-3 form-check m-3">
+                    <input type="checkbox" class="form-check-input" id="Check1">
+                    <label class="form-check-label" for="Check1">Remember Me</label>
+                </div>
                 <div class="d-flex justify-content-center mb-2  ">
-                    <a href="/sign-up-confirm" type="submit" class="btn btn-lg btn-danger shadow m-3 fw-semibold" style="color:black">Sign
-                        Up
+                    <a href="/" type="submit" class="btn btn-lg btn-danger shadow m-3 fw-semibold" style="color:black">
+                        Login
                     </a>
+
                 </div>
             </form>
         </div>
-    </div>
 
-    <br><br><br><br><br>
+        <div class="d-flex justify-content-center fs-5 fw-semibold m-3">
+            <a href="/forgot-password" class="text-decoration-none text-light">Forgot Password?</a>
+        </div>
+    </div>
 @endsection
 
 @section('footer')

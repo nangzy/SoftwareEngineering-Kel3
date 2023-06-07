@@ -1,10 +1,10 @@
-<img src="{{ asset('/images/others/footer.png') }}" alt="" style="position: absolute; background-repeat: no-repeat; z-index: -10; object-fit: fill; height: 60vh; width: 100%;">
+<img src="{{ asset('/images/others/footer-transparent.png') }}" alt="" style="position: absolute; background-repeat: no-repeat; z-index: -10; object-fit: fill; height: 60vh; width: 100%;">
 <div class="container-fluid warna-abu col-11 mt-5 mb-3">
     <br><br><br><br><br><br><br><br><br>
     <div class="row">
         <div class="col-md-9">
             <div class="fs-6">
-                2023 © <u>E-SCORE TV</u>
+                2023 © E-SCORE TV
             </div>
             <br>
             <div class="fs-6">

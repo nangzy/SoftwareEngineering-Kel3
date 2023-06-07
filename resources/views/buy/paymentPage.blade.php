@@ -1,5 +1,9 @@
 @extends('main.template1')
 
+@section('header')
+    @include('header.header-after')
+@endsection
+
 {{-- bisa buat merch, ticket, TU mole, TU valo --}}
 
 @section('content')
@@ -58,4 +62,8 @@
             
         </div>
     </div>
+@endsection
+
+@section('footer')
+    @include('footer.footer-2')
 @endsection

@@ -12,7 +12,7 @@
             </div>
         </div>
         
-        <div class="container-fluid rounded-4 d-flex flex-column col-5 warna-abu mt-3" style="background-color: #5a2225">
+        <div class="container-fluid rounded-4 d-flex flex-column col-5 warna-abu mt-3 bg-merah-terang-20">
             <div class="justify-content-center d-flex mt-3">
                 <img src="/images/icons/clipboardtick.png" alt="clipboard" class="col-4">
             </div>
@@ -22,7 +22,7 @@
             </div>
 
             <div class="justify-content-center d-flex mb-2 fs-4 text-center mt-3 fw-semibold" style="color: #B1B1B1">
-                Please wait 1-3 minutes for your purchase and re-login your account.
+                Please check your notifications to follow up of your order
             </div>
             
             <div class="d-flex justify-content-center mb-2  ">
@@ -30,4 +30,8 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('footer')
+    @include('footer.footer-2')
 @endsection

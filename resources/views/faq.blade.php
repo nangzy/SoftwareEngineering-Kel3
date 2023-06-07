@@ -23,3 +23,7 @@
         </div>
     </div>
 @endsection
+
+@section('footer')
+    @include('footer.footer-1')
+@endsection
