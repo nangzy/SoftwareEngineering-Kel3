@@ -24,7 +24,7 @@ return new class extends Migration
             $table->unsignedBigInteger('transaction_type'); // 1 = ticket, 2 = merch, 3 = top up
             $table->unsignedBigInteger('total_price');
             $table->string('payment_method');
-            $table->timestamps('created_at');
+            $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });

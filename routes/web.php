@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\FaqController;
+use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -84,6 +86,9 @@ Route::get('/tournament', function () {
 Route::get('/news', function () {
     return view('news');
 });
+
+Route::get('/faq', [FaqController::class, 'index']);
+Route::get('/news', [NewsController::class, 'index']);
 
 Route::get('/topup-cat', function () {
     return view('topup-cat');
