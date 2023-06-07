@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('item_name')->nullable(); // merch
             $table->string('event_name')->nullable(); // ticket
             $table->string('user_id_ml')->nullable(); // mobile legends
+            $table->string('server_id_mole')->nullable(); //mobile legends
             $table->string('riot_id')->nullable(); // valorant
             $table->string('invoice');
             $table->unsignedBigInteger('quantity');
