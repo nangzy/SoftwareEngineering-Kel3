@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\ContactInformation;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 

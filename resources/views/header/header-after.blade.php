@@ -55,8 +55,8 @@
     </a>
 </li>
 <li class="nav-item">
-    <img src="/images/icons/account.png" alt="login">
-    
+    <button type="button" class="btn"> <a href="#"><img src="/images/icons/account.png" alt="acc">
+    </a></button>
 </li>
 {{--    yg di bawah ini bisa diuncomment pas beackend udh jadi, ini buat klo udah login--}}
 {{--    <li class="nav-item">--}}

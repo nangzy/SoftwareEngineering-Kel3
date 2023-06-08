@@ -16,9 +16,9 @@ return new class extends Migration
             $table->unsignedBigInteger('category_id'); // 1 = mobile legends, 2 = valorant (jadi FK)
             $table->unsignedBigInteger('quantity');
             $table->unsignedBigInteger('price');    
-            $table->string('in_game_id');
-            $table->string('server_id');
-            $table->string('riot_id');
+            $table->string('in_game_id')->nullable();
+            $table->string('server_id')->nullable();
+            $table->string('riot_id')->nullable();
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('game_categories')->onDelete('cascade');

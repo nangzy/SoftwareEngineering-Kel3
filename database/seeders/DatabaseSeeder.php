@@ -14,14 +14,14 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             UserSeeder::class,
-            // ContactInformationSeeder::class,
+            ContactInformationSeeder::class,
             FaqSeeder::class,
             GameCategorySeeder::class,
-            // MerchSeeder::class,
+            MerchSeeder::class,
             NewsSeeder::class,
-            // TicketSeeder::class,
-            // TopUpSeeder::class,
-            // TransactionSeeder::class
+            TicketSeeder::class,
+            TopUpSeeder::class,
+            TransactionSeeder::class
         ]);
     }
 }
