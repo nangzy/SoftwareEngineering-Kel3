@@ -1,9 +1,15 @@
 <?php
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\NewsController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MerchController;
+use App\Http\Controllers\TopUpController;
+use App\Http\Controllers\TicketController;
+use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\GameCategoryController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,73 +31,29 @@ Route::get('/sign-up-confirm', [Controller::class, 'signupConfirm']);
 Route::get('/user-profile', [Controller::class, 'userProfile']);
 Route::get('/home', [Controller::class, 'home']);
 
-Route::get('/success-payment-ticket', function () {
-    return view('successpaymentTicket');
-});
+Route::get('/success-payment-ticket', [TicketController::class, 'SuccessTicket']);
+Route::get('/buy-ticket', [TicketController::class, 'buyTicket']);
 
-Route::get('/buy-ticket', function () {
-    return view('buyTicket');
-});
+Route::get('/buy-merch', [MerchController::class, 'buyMerch']);
+Route::get('/detail-buy-merch', [MerchController::class, 'detailMerch']);
 
-Route::get('/buy-merch', function () {
-    return view('buyMerch');
-});
-Route::get('/detail-buy-merch', function () {
-    return view('detailBuyMerch');
-});
+Route::get('/payment-page', [TransactionController::class, 'Payment']);
+Route::get('/fail-payment', [TransactionController::class, 'failPayment']);
 
-Route::get('/payment-page', function () {
-    return view('paymentPage');
-});
-
-Route::get('/fail-payment', function () {
-    return view('failPayment');
-});
-
-
-
-
-Route::get('/top-up', function () {
-    return view('topUp');
-});
-Route::get('/topup-cat', function () {
-    return view('topup-cat');
-});
-
-
-Route::get('/tournament', function () {
-    return view('tournament');
-});
+Route::get('/top-up', [TopUpController::class, 'Topup']);
+Route::get('/topup-cat', [TopUpController::class, 'TopCat']);
 
 Route::get('/faq', [FaqController::class, 'index']);
 Route::get('/news', [NewsController::class, 'index']);
 
+Route::get('/detail-transaction-merch', [TransactionController::class, 'DetailTransactionMerch']);
+Route::get('/detail-transaction-ticket', [TransactionController::class, 'DetailTransactionTicket']);
+Route::get('/detail-transaction-topup', [TransactionController::class, 'DetailTransactionTopup']);
 
-Route::get('/detail-transaction-merch', function () {
-    return view('detailTransactionMerch');
-});
-
-Route::get('/detail-transaction-ticket', function () {
-    return view('detailTransactionTicket');
-});
-
-Route::get('/detail-transaction-topup', function () {
-    return view('detailTransactionTopup');
-});
-
-Route::get('/modal', function () {
-    return view('modal');
-});
+Route::get('/modal', [GameCategoryController::class, 'Modal']);
 // coming soon 
 
-Route::get('/valo-tour', function () {
-    return view('valorant');
-});
-
-Route::get('/mole-tour', function () {
-    return view('mobile-legend');
-});
-
-Route::get('/valo-detail', function () {
-    return view('valodetail');
-});
+Route::get('/valo-tour', [GameCategoryController::class, 'Valorant']);
+Route::get('/mole-tour', [GameCategoryController::class, 'MobileLegend']);
+Route::get('/valo-detail', [GameCategoryController::class, 'DetailValorant']);
+Route::get('/tournament', [GameCategoryController::class, 'Tournament']);
