@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('category_id'); // 1 = mobile legends, 2 = valorant (jadi FK)
             $table->unsignedBigInteger('quantity');
-            $table->unsignedBigInteger('price');
+            $table->unsignedBigInteger('price');    
             $table->string('in_game_id');
             $table->string('server_id');
             $table->string('riot_id');
