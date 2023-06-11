@@ -50,7 +50,7 @@
                     <label class="form-check-label" for="Check1">Remember Me</label>
                 </div>
                 <div class="d-flex justify-content-center mb-2  ">
-                    <a href="/" type="submit" class="btn btn-lg btn-danger shadow m-3 fw-semibold" style="color:black">
+                    <a href="/home" type="submit" class="btn btn-lg btn-danger shadow m-3 fw-semibold" style="color:black">
                         Login
                     </a>
 

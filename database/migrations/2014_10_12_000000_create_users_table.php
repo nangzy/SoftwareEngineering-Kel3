@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('gender');
             $table->string('phone_number');
             $table->rememberToken();
-            $table->timestamps('created_at');
+            $table->timestamps();
         });
     }
 
