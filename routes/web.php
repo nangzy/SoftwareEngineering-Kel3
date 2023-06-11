@@ -32,8 +32,10 @@ Route::get('/user-profile', [Controller::class, 'userProfile']);
 Route::get('/home', [Controller::class, 'home']);
 
 Route::get('/success-payment-ticket', [TicketController::class, 'SuccessTicket']);
+Route::get('/ticket-cat', [TicketController::class, 'ticketCat']);
 Route::get('/buy-ticket', [TicketController::class, 'buyTicket']);
 
+Route::get('/merch-cat', [MerchController::class, 'merchCat']);
 Route::get('/buy-merch', [MerchController::class, 'buyMerch']);
 Route::get('/detail-buy-merch', [MerchController::class, 'detailMerch']);
 
@@ -51,6 +53,12 @@ Route::get('/detail-transaction-ticket', [TransactionController::class, 'DetailT
 Route::get('/detail-transaction-topup', [TransactionController::class, 'DetailTransactionTopup']);
 
 Route::get('/modal', [GameCategoryController::class, 'Modal']);
+
+
+Route::get('/ticket-cat', function(){
+    return view('buy.ticket-cat');
+});
+
 // coming soon 
 
 Route::get('/valo-tour', [GameCategoryController::class, 'Valorant']);
