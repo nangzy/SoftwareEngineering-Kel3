@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
-    public function index(){
+    public function index(News $news){
         return view('/news',[
-            'news' => News::first()
+            'news' => $news
         ]);
     }
 }
