@@ -7,4 +7,33 @@ use Illuminate\Http\Request;
 class GameCategoryController extends Controller
 {
     //
+    public function Valorant() {
+        return view('valorant', [
+
+        ]);
+    }
+
+    public function MobileLegend() {
+        return view('mobile-legend', [
+
+        ]);
+    }
+
+    public function DetailValorant(){
+        return view('valodetail', [
+
+        ]);
+    }
+
+    public function Tournament() {
+        return view('tournament', [
+
+        ]);
+    }
+
+    public function Modal() {
+        return view('modal', [
+
+        ]);
+    }
 }
