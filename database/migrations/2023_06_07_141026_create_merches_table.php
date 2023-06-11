@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('organization');
             $table->string('item');
             $table->longText('description');
-            $table->timestamps('created_at');
+            $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('game_categories')->onDelete('cascade');
         });

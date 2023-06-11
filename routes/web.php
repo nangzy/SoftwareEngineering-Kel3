@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\FaqController;
+use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,33 +16,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/forgot-password', [Controller::class, 'forgotpw']);
+Route::get('/forgot-password-confirm', [Controller::class, 'forgotpwConfirm']);
+Route::get('/login', [Controller::class, 'loginPage']);
+Route::get('/sign-up', [Controller::class, 'signup']);
+Route::get('/sign-up-confirm', [Controller::class, 'signupConfirm']);
 
-Route::get('/forgot-password', function () {
-    return view('forgotpw');
-});
-
-Route::get('/notification', function () {
-    return view('notification');
-});
-
-Route::get('/forgot-password-confirm', function () {
-    return view('forgotpw-confirm');
-});
-
-Route::get('/login', function () {
-    return view('login');
-});
-
-Route::get('/sign-up', function () {
-    return view('signup');
-});
-
-Route::get('/sign-up-confirm', function () {
-    return view('signup-confirm');
-});
+Route::get('/user-profile', [Controller::class, 'userProfile']);
+Route::get('/home', [Controller::class, 'home']);
 
 Route::get('/success-payment-ticket', function () {
     return view('successpaymentTicket');
@@ -52,6 +36,9 @@ Route::get('/buy-ticket', function () {
 Route::get('/buy-merch', function () {
     return view('buyMerch');
 });
+Route::get('/detail-buy-merch', function () {
+    return view('detailBuyMerch');
+});
 
 Route::get('/payment-page', function () {
     return view('paymentPage');
@@ -61,33 +48,24 @@ Route::get('/fail-payment', function () {
     return view('failPayment');
 });
 
-Route::get('/modal', function () {
-    return view('modal');
-});
 
-Route::get('/user-profile', function () {
-    return view('userProfile');
-});
+
 
 Route::get('/top-up', function () {
     return view('topUp');
 });
-
-Route::get('/detail-buy-merch', function () {
-    return view('detailBuyMerch');
+Route::get('/topup-cat', function () {
+    return view('topup-cat');
 });
+
 
 Route::get('/tournament', function () {
     return view('tournament');
 });
 
-Route::get('/news', function () {
-    return view('news');
-});
+Route::get('/faq', [FaqController::class, 'index']);
+Route::get('/news', [NewsController::class, 'index']);
 
-Route::get('/topup-cat', function () {
-    return view('topup-cat');
-});
 
 Route::get('/detail-transaction-merch', function () {
     return view('detailTransactionMerch');
@@ -100,6 +78,11 @@ Route::get('/detail-transaction-ticket', function () {
 Route::get('/detail-transaction-topup', function () {
     return view('detailTransactionTopup');
 });
+
+Route::get('/modal', function () {
+    return view('modal');
+});
+// coming soon 
 
 Route::get('/valo-tour', function () {
     return view('valorant');

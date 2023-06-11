@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('contact_information', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('fullname');
             $table->string('country');
             $table->string('city');
@@ -21,7 +22,9 @@ return new class extends Migration
             $table->string('address');
             $table->string('phone_number');
             $table->string('shipping_method');
-            $table->timestamps('created_at');
+            $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

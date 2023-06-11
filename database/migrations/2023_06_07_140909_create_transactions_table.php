@@ -16,15 +16,16 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('item_name')->nullable(); // merch
             $table->string('event_name')->nullable(); // ticket
-            $table->string('user_id_ml')->nullable(); // mobile legends
+            $table->string('user_id_ml')->nullable(); // mobile legends 10 angka
+            $table->string('server_id_mole')->nullable(); //mobile legends 4 angka
             $table->string('riot_id')->nullable(); // valorant
             $table->string('invoice');
             $table->unsignedBigInteger('quantity');
             $table->date('transaction_date');
             $table->unsignedBigInteger('transaction_type'); // 1 = ticket, 2 = merch, 3 = top up
             $table->unsignedBigInteger('total_price');
-            $table->string('payment_method');
-            $table->timestamps('created_at');
+            $table->string('payment_method'); //Payment Method QRIS, DANA, OVO
+            $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
