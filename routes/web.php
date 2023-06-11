@@ -63,7 +63,7 @@ Route::get('/tournament', function () {
     return view('tournament');
 });
 
-Route::get('/faq', [FaqController::class, 'index']);
+Route::get('/faq/{faqs:slug}', [FaqController::class, 'index']);
 Route::get('/news', [NewsController::class, 'index']);
 
 

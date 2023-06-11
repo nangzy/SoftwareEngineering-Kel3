@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 
 class FaqController extends Controller
 {
-    public function index(){
-        return view('/faq',[
-            'faq' => Faq::first()
+    public function index(Faq $faqs){
+        return view('faq',[
+            'faq' => $faqs
         ]);
     }
 }
