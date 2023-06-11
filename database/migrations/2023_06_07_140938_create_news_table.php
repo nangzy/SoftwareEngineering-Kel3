@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('news', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('slug');
+            $table->string('image');
             $table->longText('content');
             $table->unsignedBigInteger('category_id'); // 1 = mobile legends, 2 = valorant (jadi FK)
             $table->timestamps();

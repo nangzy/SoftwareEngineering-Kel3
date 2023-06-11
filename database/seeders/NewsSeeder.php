@@ -15,6 +15,8 @@ class NewsSeeder extends Seeder
     {
         News::insert([
             'title' => 'VCT 2023 Americas League: Marved Replaces TenZ in Sentinels',
+            'slug' => 'VCT-2023-Americas-League',
+            'image' => 'image 54',
             // content wajib petik 2
             'content' => "The premier regional league for North and South America (Americas), Valorant Champions Tour (VCT) 2023 Americas League kicked off on 1st April. One of the biggest names in the league, Sentinels, is struggling to find its footing in the tournament and is currently 8th in the standings with a 1-2 (win-loss) record. After a slow start to the season, Sentinels has been busy making big roster moves. On 17th April, the organization dropped head coach Don “SyykoNT” Muir, and Adam “kaplan” Kaplan took charge. Following this, in a video, kaplan announced that Tyson “TenZ” Ngo will sit out VCT 2023 Americas Week 4 with Jimmy “Marved” Nguyen stepping in.
             \nOn 19th April, Sentinels released a video introducing the new head coach kaplan. In this video, kaplan talked about TenZ sitting out this week to recover. He said TenZ was not feeling good due to his finger injury and COVID-19 infection, adding, “We are going to give him a week to chill. Luckily we have a world champion for a sub. We are going to be bringing Marved in. We are going to be practicing with him this week and playing our super week of matches with him.”
