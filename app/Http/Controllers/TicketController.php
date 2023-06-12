@@ -9,7 +9,7 @@ class TicketController extends Controller
     //
     public function ticketCat() {
         return view('buy.ticket-cat', [
-
+            'active' => 'ticket'
         ]);
     }
 

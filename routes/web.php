@@ -22,25 +22,31 @@ use App\Http\Controllers\GameCategoryController;
 |
 */
 
-// kalau rputesnya ke / redirect ke home page aja
+// kalau routesnya ke "/" redirect ke home page aja
 Route::get('/', function () {
     return redirect('/home');
 });
 
-// authentication dan register
+// home
 Route::get('/home', [Controller::class, 'home']);
 
+// login
 Route::get('/login', [Controller::class, 'loginPage']);
 Route::post('/login', [Controller::class, 'loginUser']);
 
+// logout
 Route::post('/logout', [Controller::class, 'logout']);
 
+// forgot password
 Route::get('/forgot-password', [Controller::class, 'forgotpw']);
 Route::get('/forgot-password-confirm', [Controller::class, 'forgotpwConfirm']);
 
+// sign up
 Route::get('/sign-up', [Controller::class, 'signup']);
+Route::post('/sign-up', [Controller::class, 'signUpUser']);
 Route::get('/sign-up-confirm', [Controller::class, 'signupConfirm']);
 
+// user profile
 Route::get('/user-profile', [Controller::class, 'userProfile']);
 
 // ticket
@@ -67,7 +73,6 @@ Route::get('/detail-transaction-topup', [TransactionController::class, 'DetailTr
 // others
 Route::get('/faq/{faqs:slug}', [FaqController::class, 'index']);
 Route::get('/news/{news:slug}', [NewsController::class, 'index']);
-
 Route::get('/modal', [GameCategoryController::class, 'Modal']);
 
 // coming soon

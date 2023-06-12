@@ -25,19 +25,19 @@
                         <tr>
                           <th>Nama</th>
                           {{-- ubah dibawah sini --}}
-                          <th>{{ Session::get('loginUser')->name }}</th>
+                          <th>{{ Session::get('loginUser')->name ?? '[name here]' }}</th>
                         </tr>
 
                         <tr>
                             <th>Date of Birth</th>
                             {{-- ubah dibawah sini --}}
-                            <th>{{ Session::get('loginUser')->date_of_birth }}</th>
+                            <th>{{ Session::get('loginUser')->date_of_birth ?? '[date of birth here]' }}</th>
                         </tr>
 
                         <tr>
                             <th>Gender</th>
                             {{-- ubah dibawah sini --}}
-                            <th>{{ Session::get('loginUser')->gender }}</th>
+                            <th>{{ Session::get('loginUser')->gender ?? '[gender here]' }}</th>
                         </tr>
 
                         <tr>
@@ -49,7 +49,7 @@
                         <tr>
                           <th>Phone Number</th>
                           {{-- ubah dibawah sini --}}
-                          <th>{{ Session::get('loginUser')->phone_number }}</th>
+                          <th>{{ Session::get('loginUser')->phone_number ?? '[phone number here]' }}</th>
                         </tr>
                     </tbody>
 

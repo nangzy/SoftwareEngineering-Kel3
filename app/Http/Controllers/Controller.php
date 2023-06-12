@@ -53,7 +53,7 @@ class Controller extends BaseController
                     'loginUser', $getUser
                 );
                 $request->session()->regenerate();
-                return $this->home();
+                return redirect('/home');
             }
         }
     }
@@ -64,12 +64,32 @@ class Controller extends BaseController
             return $this->home();
         }
 
-        return $this->home();
+        return redirect('/home');
     }
 
-    public function signup(){
-        return view('signin.signup',[
+    public function signUpUser(Request $request) {
+        if (!filter_var($request->user_email, FILTER_VALIDATE_EMAIL)) {
+            return $this->signup('wrong_email_format');
+        }
 
+        if ($request->user_password !== $request->user_confirm_password) {
+            return $this->signup('password_not_match');
+        }
+
+        $nowDate = now()->timezone('Asia/Jakarta')->format('Y-m-d H:i:s');
+
+        User::insert([
+            'email' => $request->user_email,
+            'password' => Hash::make($request->user_password),
+            'created_at' => $nowDate
+        ]);
+
+        return redirect('/sign-up-confirm');
+    }
+
+    public function signup($validateUserInput = null){
+        return view('signin.signup',[
+            'validateUserInput' => $validateUserInput
         ]);
     }
 

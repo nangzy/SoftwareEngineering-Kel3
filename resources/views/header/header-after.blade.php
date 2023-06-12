@@ -32,13 +32,13 @@
 </li>
 <li class="nav-item nav-item-button">
     <a class="d-flex justify-content-center align-items-center nav-link text-white full-width-accordion-item"
-       href="/buy-merch">
+       href="/merch-cat">
         <span class="{{ $active == 'merch' ? 'active' : 'inactive' }}">Merch</span>
     </a>
 </li>
 <li class="nav-item nav-item-button">
     <a class="d-flex justify-content-center align-items-center nav-link text-white full-width-accordion-item"
-       href="/buy-ticket">
+       href="/ticket-cat">
         <span class="{{ $active == 'ticket' ? 'active' : 'inactive' }}">Ticket</span>
     </a>
 </li>
