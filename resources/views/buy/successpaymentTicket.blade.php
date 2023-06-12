@@ -6,12 +6,12 @@
             <div style="color: #ffffff">
                 Special Thanks From&nbsp;
             </div>
-            
+
             <div class="tulisan-merah-terang">
                 E-SCORE TV&nbsp;
             </div>
         </div>
-        
+
         <div class="container-fluid rounded-4 d-flex flex-column col-5 warna-abu mt-3 bg-merah-terang-20">
             <div class="justify-content-center d-flex mt-3">
                 <img src="/images/icons/clipboardtick.png" alt="clipboard" class="col-4">
@@ -24,9 +24,9 @@
             <div class="justify-content-center d-flex mb-2 fs-4 text-center mt-3 fw-semibold" style="color: #B1B1B1">
                 Please check your notifications to follow up of your order
             </div>
-            
+
             <div class="d-flex justify-content-center mb-2  ">
-                <a href="/" class="text-decoration-none"><button type="submit" class="btn btn-lg btn-danger shadow m-3 fw-semibold" style="--bs-btn-padding-x: 3rem"> Home</button></a>
+                <a href="/" class="btn btn-lg btn-danger shadow m-3 fw-semibold text-decoration-none" style="--bs-btn-padding-x: 3rem">Home</a>
             </div>
         </div>
     </div>

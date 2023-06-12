@@ -128,4 +128,10 @@ class Controller extends BaseController
             'active' => 'user_profile'
         ]);
     }
+
+    public function viewNotification() {
+        return view('notification', [
+            'active' => 'notification'
+        ]);
+    }
 }

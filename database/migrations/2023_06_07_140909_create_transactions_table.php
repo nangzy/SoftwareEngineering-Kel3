@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('item_name')->nullable(); // merch
+            $table->string('size')->nullable(); // merch
             $table->string('event_name')->nullable(); // ticket
             $table->string('user_id_ml')->nullable(); // mobile legends 10 angka
             $table->string('server_id_mole')->nullable(); //mobile legends 4 angka

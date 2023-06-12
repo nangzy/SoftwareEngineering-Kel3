@@ -50,8 +50,8 @@
 </li>
 <li class="nav-item nav-item-button">
     <a class="d-flex justify-content-center align-items-center nav-link text-white full-width-accordion-item"
-        href="#">
-        Notification
+        href="/notification">
+        <span class="{{ $active == 'notification' ? 'active' : 'inactive' }}">Notification</span>
     </a>
 </li>
 <li class="nav-item">

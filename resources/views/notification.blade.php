@@ -1,7 +1,11 @@
 @extends('main.template1')
 
 @section('header')
-    @include('header.header-after')
+    @if(Session::has('loginUser'))
+        @include('header.header-after')
+    @else
+        @include('header.header-before')
+    @endauth
 @endsection
 
 @section('content')
@@ -24,7 +28,7 @@
                     Riot Games has announced the launch of Valorant Champions Tour (VCT), a global tournament series featuring top teams from around the world. The VCT will consist of three levels of competition: Challengers, Masters, and Champions.
                 </div>
             </div>
-            
+
         </div>
     </div>
 @endsection

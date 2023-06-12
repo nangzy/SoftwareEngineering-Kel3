@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('merch_name');
             $table->unsignedBigInteger('price');
             $table->string('size');
-            $table->unsignedBigInteger('quantity');
             $table->string('organization');
             $table->string('item');
             $table->longText('description');

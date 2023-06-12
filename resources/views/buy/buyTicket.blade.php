@@ -1,7 +1,11 @@
 @extends('main.template1')
 
 @section('header')
-    @include('header.header-after')
+    @if(Session::has('loginUser'))
+        @include('header.header-after')
+    @else
+        @include('header.header-before')
+    @endauth
 @endsection
 
 @section('content')
@@ -9,7 +13,7 @@
         <div class="mt-3 mb-3">
             <a href=""><img src="/images/Icons/Vector.png" alt="back"></a> &nbsp;
         </div>
-    
+
         <div class="col-5">
             <img src="/images/Matches/Ticket1.png" alt="ticket" class="img-fluid">
         </div>
@@ -59,7 +63,7 @@
                     </select>
                 </div>
                 <div class="">
-                    <a href="/payment-page" class="text-decoration-none"><button type="submit" class="btn btn-lg btn-danger shadow m-3 fw-semibold text-light" style="--bs-btn-padding-x: 1.5rem"> Buy Now </button></a> 
+                    <a href="/payment-page" class="text-decoration-none"><button type="submit" class="btn btn-lg btn-danger shadow m-3 fw-semibold text-light" style="--bs-btn-padding-x: 1.5rem"> Buy Now </button></a>
                 </div>
             </div>
         </div>

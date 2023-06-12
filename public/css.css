@@ -26,6 +26,14 @@ body {
     color: white;
 }
 
+.active-button {
+
+}
+
+.back-button:hover {
+    opacity: 0.7;
+}
+
 .warna-abu {
     color: #D9D9D9;
 }

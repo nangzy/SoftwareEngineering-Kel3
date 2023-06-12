@@ -55,25 +55,30 @@ Route::get('/ticket-cat', [TicketController::class, 'ticketCat']);
 Route::get('/success-payment-ticket', [TicketController::class, 'SuccessTicket']);
 
 // merch
-Route::get('/buy-merch', [MerchController::class, 'buyMerch']);
+Route::get('/{merch_id}/buy-merch', [MerchController::class, 'buyMerch']);
+Route::post('/{merch_id}/buy-merch', [MerchController::class, 'buyMerchDetail']);
 Route::get('/merch-cat', [MerchController::class, 'merchCat']);
-Route::get('/detail-buy-merch', [MerchController::class, 'detailMerch']);
+Route::post('/merch-cat', [MerchController::class, 'merchPayment']);
+Route::post('/{merch_id}/detail-buy-merch', [MerchController::class, 'detailMerch']);
 
 // top up
 Route::get('/top-up', [TopUpController::class, 'Topup']);
 Route::get('/topup-cat', [TopUpController::class, 'TopCat']);
 
 // transactions
-Route::get('/payment-page', [TransactionController::class, 'Payment']);
+Route::post('/{item_category}/{item_id}/payment-page', [TransactionController::class, 'Payment']);
+Route::post('/{item_category}/{item_id}/payment-success', [TransactionController::class, 'paymentSuccess']);
 Route::get('/fail-payment', [TransactionController::class, 'failPayment']);
-Route::get('/detail-transaction-merch', [TransactionController::class, 'DetailTransactionMerch']);
+Route::post('/{merch_id}/detail-transaction-merch', [TransactionController::class, 'DetailTransactionMerch']);
 Route::get('/detail-transaction-ticket', [TransactionController::class, 'DetailTransactionTicket']);
 Route::get('/detail-transaction-topup', [TransactionController::class, 'DetailTransactionTopup']);
+Route::get('/success-payment-merch-ticket', [TransactionController::class, 'successPaymentMerchAndTicket']);
 
 // others
 Route::get('/faq/{faqs:slug}', [FaqController::class, 'index']);
 Route::get('/news/{news:slug}', [NewsController::class, 'index']);
 Route::get('/modal', [GameCategoryController::class, 'Modal']);
+Route::get('/notification', [Controller::class, 'viewNotification']);
 
 // coming soon
 Route::get('/valo-tour', [GameCategoryController::class, 'Valorant']);
