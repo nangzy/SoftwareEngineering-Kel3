@@ -1,7 +1,11 @@
 @extends('main.template1')
 
 @section('header')
-    @include('header.header-after')
+    @if(Session::has('loginUser'))
+        @include('header.header-after')
+    @else
+        @include('header.header-before')
+    @endauth
 @endsection
 
 @section('content')
@@ -41,7 +45,7 @@
             <div class="container-fluid px-0 flex-column d-flex align-items-start justify-content-start" style="height: 8rem">
                 <div class="d-flex mb-auto">
                     <div class="fs-6 warna-abu stroke-putih">
-                        15 March 2023 
+                        15 March 2023
                     </div>
 
                     <div>
@@ -49,13 +53,13 @@
                     </div>
 
                     <div class="fs-6 warna-abu stroke-putih">
-                        INV/20230315/MPL/483290484                 
+                        INV/20230315/MPL/483290484
                     </div>
                 </div>
                 <div class="fs-2 fw-bold text-light">
                     Mobile Legend Diamond
                 </div>
-                
+
                 <div class="fs-6 warna-abu stroke-putih">
                     Rp 2.000.000
                 </div>

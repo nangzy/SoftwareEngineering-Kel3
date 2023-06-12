@@ -23,7 +23,7 @@
         </div>
 
         <div class="mt-3 d-flex justify-content-center">
-            <img src="/images/others/image 54.png" alt="news" class="img-fluid">
+            <img src="/images/others/{{ $news->image }}.png" alt="news" class="img-fluid">
         </div>
         @php($contentSplit=explode("\n", $news->content))
         <div class="text-white fs-6 text-justify my-5 ">

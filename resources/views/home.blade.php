@@ -1,7 +1,11 @@
 @extends('main.template1')
 
 @section('header')
-    @include('header.header-after')
+    @if(Session::has('loginUser'))
+        @include('header.header-after')
+    @else
+        @include('header.header-before')
+    @endauth
 @endsection
 
 @section('content')
@@ -251,7 +255,7 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('/images/carousel/mobile_legends/mogile_legends2.png') }}" alt="banner ml 2" class=""
+                        <img src="{{ asset('/images/carousel/mobile_legends/mobile_legends2.png') }}" alt="banner ml 2" class=""
                              style="width: 100%; height: 15rem; object-fit: contain; border-radius: 1rem; margin-bottom: 1rem;">
 
                         <br>
@@ -269,11 +273,11 @@
                         </div>
 
                         <div style="color: white; text-align: center; margin-bottom: 3rem;">
-                            Caption here
+                            SAMSUNG GALAXY GAMING ACADEMY
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('/images/carousel/mobile_legends/mogile_legends2.png') }}" alt="banner ml 3" class=""
+                        <img src="{{ asset('/images/carousel/mobile_legends/mobile_legends3.png') }}" alt="banner ml 3" class=""
                              style="width: 100%; height: 15rem; object-fit: contain; border-radius: 1rem; margin-bottom: 1rem;">
 
                         <br>
@@ -291,7 +295,7 @@
                         </div>
 
                         <div style="color: white; text-align: center; margin-bottom: 3rem;">
-                            Caption here
+                            MLBB SEA GAMES 2023
                         </div>
                     </div>
                 </div>

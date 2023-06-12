@@ -1,7 +1,11 @@
 @extends('main.template1')
 
 @section('header')
-    @include('header.header-after')
+    @if(Session::has('loginUser'))
+        @include('header.header-after')
+    @else
+        @include('header.header-before')
+    @endauth
 @endsection
 
 @section('content')
@@ -72,7 +76,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- UPCOMING EVENTS -->
             <div class="container-fluid">
                 <div class="container-fluid d-flex justify-content-between">
@@ -91,7 +95,7 @@
                         <div class="container-fluid px-0 flex-column d-flex align-items-start justify-content-start">
                             <div class="d-flex mb-auto">
                                 <div class="fs-6 text-white fw-bold">
-                                    MLBB South East Asia Cup 2023                
+                                    MLBB South East Asia Cup 2023
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between">
@@ -99,7 +103,7 @@
                                     <div class="tulisan-merah-terang fs-6">
                                         Ongoing
                                     </div>
-                            
+
                                     <div class="fs-6 warna-abu stroke-putih">
                                         STATUS
                                     </div>
@@ -198,7 +202,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- COMPLETED EVENTS -->
             <div class="container-fluid">
                 <div class="container-fluid d-flex justify-content-between">
@@ -217,7 +221,7 @@
                         <div class="container-fluid px-0 flex-column d-flex align-items-start justify-content-start">
                             <div class="d-flex mb-auto">
                                 <div class="fs-6 text-white fw-bold">
-                                    MPL Indonesia Season 11                 
+                                    MPL Indonesia Season 11
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between">
@@ -225,7 +229,7 @@
                                     <div class="tulisan-biru fs-6">
                                         Completed
                                     </div>
-                            
+
                                     <div class="fs-6 warna-abu stroke-putih">
                                         STATUS
                                     </div>
@@ -271,9 +275,9 @@
 
     <!-- FAQ -->
     <div class="d-flex flex-row-reverse container-fluid col-10 mt-5">
-        <a href="#"><img src="/images/Icons/Group 308.png" alt="FAQ"></a>
+        <a href="/faq/mlbb-tournament"><img src="/images/Icons/Group 308.png" alt="FAQ"></a>
     </div>
-    
+
 @endsection
 
 @section('footer')

@@ -22,37 +22,65 @@ use App\Http\Controllers\GameCategoryController;
 |
 */
 
-Route::get('/forgot-password', [Controller::class, 'forgotpw']);
-Route::get('/forgot-password-confirm', [Controller::class, 'forgotpwConfirm']);
-Route::get('/login', [Controller::class, 'loginPage']);
-Route::get('/sign-up', [Controller::class, 'signup']);
-Route::get('/sign-up-confirm', [Controller::class, 'signupConfirm']);
+// kalau routesnya ke "/" redirect ke home page aja
+Route::get('/', function () {
+    return redirect('/home');
+});
 
-Route::get('/user-profile', [Controller::class, 'userProfile']);
+// home
 Route::get('/home', [Controller::class, 'home']);
 
-Route::get('/success-payment-ticket', [TicketController::class, 'SuccessTicket']);
+// login
+Route::get('/login', [Controller::class, 'loginPage']);
+Route::post('/login', [Controller::class, 'loginUser']);
+
+// logout
+Route::post('/logout', [Controller::class, 'logout']);
+
+// forgot password
+Route::get('/forgot-password', [Controller::class, 'forgotpw']);
+Route::get('/forgot-password-confirm', [Controller::class, 'forgotpwConfirm']);
+
+// sign up
+Route::get('/sign-up', [Controller::class, 'signup']);
+Route::post('/sign-up', [Controller::class, 'signUpUser']);
+Route::get('/sign-up-confirm', [Controller::class, 'signupConfirm']);
+
+// user profile
+Route::get('/user-profile', [Controller::class, 'userProfile']);
+
+// ticket
 Route::get('/buy-ticket', [TicketController::class, 'buyTicket']);
+Route::get('/ticket-cat', [TicketController::class, 'ticketCat']);
+Route::get('/success-payment-ticket', [TicketController::class, 'SuccessTicket']);
 
-Route::get('/buy-merch', [MerchController::class, 'buyMerch']);
-Route::get('/detail-buy-merch', [MerchController::class, 'detailMerch']);
+// merch
+Route::get('/{merch_id}/buy-merch', [MerchController::class, 'buyMerch']);
+Route::post('/{merch_id}/buy-merch', [MerchController::class, 'buyMerchDetail']);
+Route::get('/merch-cat', [MerchController::class, 'merchCat']);
+Route::post('/merch-cat', [MerchController::class, 'merchPayment']);
+Route::post('/{merch_id}/detail-buy-merch', [MerchController::class, 'detailMerch']);
 
-Route::get('/payment-page', [TransactionController::class, 'Payment']);
-Route::get('/fail-payment', [TransactionController::class, 'failPayment']);
-
+// top up
 Route::get('/top-up', [TopUpController::class, 'Topup']);
 Route::get('/topup-cat', [TopUpController::class, 'TopCat']);
 
-Route::get('/faq', [FaqController::class, 'index']);
-Route::get('/news', [NewsController::class, 'index']);
-
-Route::get('/detail-transaction-merch', [TransactionController::class, 'DetailTransactionMerch']);
+// transactions
+Route::post('/{item_category}/{item_id}/payment-page', [TransactionController::class, 'Payment']);
+Route::post('/{item_category}/{item_id}/payment-success', [TransactionController::class, 'paymentSuccess']);
+Route::get('/fail-payment', [TransactionController::class, 'failPayment']);
+Route::post('/{merch_id}/detail-transaction-merch', [TransactionController::class, 'DetailTransactionMerch']);
 Route::get('/detail-transaction-ticket', [TransactionController::class, 'DetailTransactionTicket']);
 Route::get('/detail-transaction-topup', [TransactionController::class, 'DetailTransactionTopup']);
+Route::get('/success-payment-merch-ticket', [TransactionController::class, 'successPaymentMerchAndTicket']);
 
+// others
+Route::get('/faq/{faqs:slug}', [FaqController::class, 'index']);
+Route::get('/news/{news:slug}', [NewsController::class, 'index']);
 Route::get('/modal', [GameCategoryController::class, 'Modal']);
-// coming soon 
+Route::get('/notification', [Controller::class, 'viewNotification']);
 
+// coming soon
 Route::get('/valo-tour', [GameCategoryController::class, 'Valorant']);
 Route::get('/mole-tour', [GameCategoryController::class, 'MobileLegend']);
 Route::get('/valo-detail', [GameCategoryController::class, 'DetailValorant']);
