@@ -32,7 +32,7 @@
         </div>
 
         <div class="d-flex flex-row-reverse">
-            <a href="#"><img src="/images/Icons/Group 308.png" alt="FAQ"></a>
+            <a href="/faq/top-up"><img src="/images/Icons/Group 308.png" alt="FAQ"></a>
         </div>
     </div>
 
