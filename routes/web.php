@@ -43,8 +43,8 @@ Route::get('/fail-payment', [TransactionController::class, 'failPayment']);
 Route::get('/top-up', [TopUpController::class, 'Topup']);
 Route::get('/topup-cat', [TopUpController::class, 'TopCat']);
 
-Route::get('/faq', [FaqController::class, 'index']);
-Route::get('/news', [NewsController::class, 'index']);
+Route::get('/faq/{faqs:slug}', [FaqController::class, 'index']);
+Route::get('/news/{news:slug}', [NewsController::class, 'index']);
 
 Route::get('/detail-transaction-merch', [TransactionController::class, 'DetailTransactionMerch']);
 Route::get('/detail-transaction-ticket', [TransactionController::class, 'DetailTransactionTicket']);

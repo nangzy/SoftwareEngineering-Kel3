@@ -271,7 +271,7 @@
 
     <!-- FAQ -->
     <div class="d-flex flex-row-reverse container-fluid col-10 mt-5">
-        <a href="#"><img src="/images/Icons/Group 308.png" alt="FAQ"></a>
+        <a href="/faq/mlbb-tournament"><img src="/images/Icons/Group 308.png" alt="FAQ"></a>
     </div>
     
 @endsection

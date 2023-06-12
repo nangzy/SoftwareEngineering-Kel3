@@ -342,7 +342,7 @@
 
     <!-- FAQ -->
     <div class="d-flex flex-row-reverse container-fluid col-10 mt-5">
-        <a href="#"><img src="/images/Icons/Group 308.png" alt="FAQ"></a>
+        <a href="/faq/valorant-tournament"><img src="/images/Icons/Group 308.png" alt="FAQ"></a>
     </div>
     
 @endsection
@@ -350,30 +350,3 @@
 <!-- @section('footer')
     @include('footer.footer-2')
 @endsection -->
-
-<!-- <div class="container-fluid col-10 d-flex">
-                    <div class="mx-2"><img src="/images/others/killjoy.png" alt="Agent Kilijoy" class="img-fluid"></div>
-                    <div class="mx-2"><img src="/images/others/viper.png" alt="Agent Viper" class="img-fluid"></div>
-                    <div class="mx-2"><img src="/images/others/breach.png" alt="Agent Breach" class="img-fluid"></div>
-                    <div class="mx-2"><img src="/images/others/skye.png" alt="Agent Skye" class="img-fluid"></div>
-                    <div class="mx-2"><img src="/images/others/jett.png" alt="Agent Jett" class="img-fluid"></div>
-
-                    <div class="container-fluid col-7 d-flex text-white fs-6 fw-bold mr-5">
-                        <div class="warna-merah-gelap p-2">1.20</div>
-                        <div class="warna-merah-gelap p-2">245</div>
-                        <div class="d-flex p-2 warna-merah-gelap">
-                            <div class="mx-2">98</div>
-                            <div class="mx-1">/</div>
-                            <div class="mx-2">78</div>
-                            <div class="mx-1">/</div>
-                            <div class="mx-2">27</div>
-                        </div>
-                        <div class="warna-merah-gelap p-2" style="color: lime">+20</div>
-                        <div class="warna-merah-gelap p-2">74%</div>
-                        <div class="warna-merah-gelap p-2">173</div>
-                        <div class="warna-merah-gelap p-2">25%</div>
-                        <div class="warna-merah-gelap p-2">245</div>
-                        <div class="warna-merah-gelap p-2">4</div>
-                        <div class="warna-merah-gelap p-2" style="color: lime">+8</div>
-                    </div>
-                </div> -->
