@@ -28,33 +28,45 @@
         </div>
 
         <div class="container-fluid rounded-4 d-flex flex-column col-4 warna-krem bg-merah-terang-20">
-            <form>
+            <form method="post" action="/sign-up">
+                @csrf
                 <div class="mt-2 p-3">
                     <label for="InputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="InputEmail1" placeholder="name@example.com">
+                    <input name="user_email" type="text" class="form-control" id="InputEmail1" placeholder="name@example.com" autofocus required value="{{ old('user_email') }}">
+                    @if($validateUserInput == 'wrong_email_format')
+                        <div class="fw-semibold text-white">
+                            Wrong Email Format!
+                        </div>
+                    @endif
                 </div>
                 <div class="p-3">
                     <label for="InputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="InputPassword1" placeholder="**********">
+                    <input type="password" name="user_password" class="form-control" id="InputPassword1" placeholder="**********" required>
                 </div>
                 <div class="mb-3 p-3">
                     <label for="InputPassword1" class="form-label">Confirm Password</label>
-                    <input type="password" class="form-control" id="InputPassword1" placeholder="**********">
+                    <input type="password" name="user_confirm_password" class="form-control" id="InputPassword1" placeholder="**********" required>
                 </div>
 
-                <div class="fs-5 d-flex justify-content-center" style="color: white">
-                    OR
-                </div>
+                @if($validateUserInput == 'password_not_match')
+                    <div class="fs-5 fw-semibold p-3 text-center text-white" style="background-color: #80181E; border-radius: 1rem;">
+                        Password Does Not Match!
+                    </div>
+                @endif
+
+{{--                <div class="fs-5 d-flex justify-content-center" style="color: white">--}}
+{{--                    OR--}}
+{{--                </div>--}}
 
                 {{-- kurang api buat konekin --}}
-                <div class="text-center">
-                    google sign in, etc.
-                </div>
+{{--                <div class="text-center">--}}
+{{--                    google sign in, etc.--}}
+{{--                </div>--}}
 
                 <div class="d-flex justify-content-center mb-2  ">
-                    <a href="/sign-up-confirm" type="submit" class="btn btn-lg btn-danger shadow m-3 fw-semibold" style="color:black">Sign
+                    <button type="submit" class="btn btn-lg btn-danger shadow m-3 fw-semibold" value="sign_up" style="color:black">Sign
                         Up
-                    </a>
+                    </button>
                 </div>
             </form>
         </div>

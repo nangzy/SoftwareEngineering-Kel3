@@ -19,8 +19,27 @@ class MerchSeeder extends Seeder
             'merch_name' => "EVOS Jersey",
             'price' => 150000,
             'size' => "S M L XL XXL",
-            'quantity' => 1,
             'organization' => "EVOS",
+            'item' => "Jersey",
+            'description' => "- 100% Polyester Coolmax Moisture Wicking Fabric\n- Slim Fit\n- Sublimated Partners Logos\n- Made in Indonesia"
+        ]);
+
+        Merch::insert([
+            'category_id' => 2,
+            'merch_name' => "RRQ Jersey",
+            'price' => 150000,
+            'size' => "S M L XL XXL",
+            'organization' => "RRQ",
+            'item' => "Jersey",
+            'description' => "- 100% Polyester Coolmax Moisture Wicking Fabric\n- General Fit\n- Sublimated Partners Logos\n- Made in Indonesia"
+        ]);
+
+        Merch::insert([
+            'category_id' => 2,
+            'merch_name' => "ONIC Jersey",
+            'price' => 150000,
+            'size' => "S M L XL XXL",
+            'organization' => "ONIC",
             'item' => "Jersey",
             'description' => "- 100% Polyester Coolmax Moisture Wicking Fabric\n- Slim Fit\n- Sublimated Partners Logos\n- Made in Indonesia"
         ]);

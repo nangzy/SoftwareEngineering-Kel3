@@ -1,7 +1,11 @@
 @extends('main.template1')
 
 @section('header')
-    @include('header.header-after')
+    @if(Session::has('loginUser'))
+        @include('header.header-after')
+    @else
+        @include('header.header-before')
+    @endauth
 @endsection
 
 @section('content')
@@ -41,7 +45,7 @@
             <div class="container-fluid px-0 flex-column d-flex align-items-start justify-content-start" style="height: 8rem">
                 <div class="d-flex mb-auto">
                     <div class="fs-6 warna-abu stroke-putih">
-                        01 March 2023 
+                        01 March 2023
                     </div>
 
                     <div>
@@ -49,13 +53,13 @@
                     </div>
 
                     <div class="fs-6 warna-abu stroke-putih">
-                        INV/20230301/MPL/109375922             
+                        INV/20230301/MPL/109375922
                     </div>
                 </div>
                 <div class="fs-2 fw-bold text-light">
                     MPL ID REGULER SEASON DAY 1 MATCH 1 - GEEK VS AE
                 </div>
-                
+
                 <div class="fs-6 warna-abu stroke-putih">
                     4 Ticket x Rp 75.000
                 </div>

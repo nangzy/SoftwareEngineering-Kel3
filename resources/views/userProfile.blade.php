@@ -1,8 +1,15 @@
 @extends('main.template1')
 
-@section('content')
+@section('header')
+    @if(Session::has('loginUser'))
+        @include('header.header-after')
+    @else
+        @include('header.header-before')
+    @endauth
+@endsection
 
-    <div class="container-fluid col-11 bg-merah-terang-20 rounded-4 mb-3">
+@section('content')
+    <div class="container-fluid col-11 bg-merah-terang-20 rounded-4 mb-3 p-3">
         <div class="container-fluid d-flex justify-content-center mb-5">
             <h2 class="text-light fw-semibold">User Profile</h2>
         </div>
@@ -10,7 +17,7 @@
         <div class="d-flex justify-content-center mb-4">
             <img src="/images/devan.png" alt="devan">
         </div>
-        
+
         <div class="container-fluid d-flex justify-content-center col-6 border border-light">
             <div class="fs-5 fw-semibold d-flex container-fluid justify-content-between">
                 <table class="table table-borderless">
@@ -18,31 +25,31 @@
                         <tr>
                           <th>Nama</th>
                           {{-- ubah dibawah sini --}}
-                          <th>Devan</th>
+                          <th>{{ Session::get('loginUser')->name ?? '[name here]' }}</th>
                         </tr>
 
                         <tr>
                             <th>Date of Birth</th>
                             {{-- ubah dibawah sini --}}
-                            <th>25 August 2001</th>
+                            <th>{{ Session::get('loginUser')->date_of_birth ?? '[date of birth here]' }}</th>
                         </tr>
 
                         <tr>
                             <th>Gender</th>
                             {{-- ubah dibawah sini --}}
-                            <th>Male</th>
+                            <th>{{ Session::get('loginUser')->gender ?? '[gender here]' }}</th>
                         </tr>
 
                         <tr>
                             <th>Email</th>
                             {{-- ubah dibawah sini --}}
-                            <th>devan.augusta@gmail.com</th>
+                            <th>{{ Session::get('loginUser')->email }}</th>
                           </tr>
 
                         <tr>
                           <th>Phone Number</th>
                           {{-- ubah dibawah sini --}}
-                          <th>081273592705</th>
+                          <th>{{ Session::get('loginUser')->phone_number ?? '[phone number here]' }}</th>
                         </tr>
                     </tbody>
 
@@ -50,8 +57,8 @@
             </div>
         </div>
 
-        <div class="d-flex justify-content-center mt-3 pb-3">
-            <a href="/" class="text-decoration-none"><button type="submit" class="btn btn-lg btn-danger shadow m-3 fw-semibold" style="--bs-btn-padding-x: 3rem"> Edit Profile</button></a>
+        <div class="d-flex justify-content-center mt-3">
+            <a href="#" class="text-decoration-none"><button type="submit" class="btn btn-lg btn-danger shadow m-3 fw-semibold" style="--bs-btn-padding-x: 3rem"> Edit Profile</button></a>
         </div>
     </div>
 
@@ -65,10 +72,10 @@
                     Recent Transaction
                 </div>
                 <div class="fs-5 fw-semibold container-fluid border border-light bg-merah-terang-20 p-4">
-                    <div class="rounded-pill bg-merah-terang text-dark mb-3 fs-6" style="padding: .25rem 1rem; display:inline-block;"> 
+                    <div class="rounded-pill bg-merah-terang text-dark mb-3 fs-6" style="padding: .25rem 1rem; display:inline-block;">
                         Merch
                     </div>
-        
+
                     <div class="d-flex container-fluid justify-content-between warna-abu stroke-putih">
                         <div>
                             Product
@@ -77,7 +84,7 @@
                             EVOS Jersey
                         </div>
                     </div>
-        
+
                     <div class="d-flex container-fluid justify-content-between warna-abu stroke-putih">
                         <div>
                             Price
@@ -86,7 +93,7 @@
                             Rp315.000
                         </div>
                     </div>
-        
+
                     <div class="d-flex container-fluid justify-content-between warna-abu stroke-putih">
                         <div>
                             Quantity
@@ -95,7 +102,7 @@
                             1
                         </div>
                     </div>
-        
+
                     <div class="d-flex container-fluid justify-content-between warna-abu stroke-putih">
                         <div>
                             Total Price
@@ -109,19 +116,20 @@
         </div>
         <div class="d-flex justify-content-center fs-5 mt-3">
             <a href="#" class="text-decoration-none tulisan-merah-terang">
-                See All    
-            </a> 
+                See All
+            </a>
         </div>
         <div>
             &nbsp;
         </div>
     </div>
 
-    <div class="d-flex justify-content-center mt-5">
-        <button class="btn btn-lg btn-danger">
-            <img src="/images/Icons/logOut.png" alt=""> Log out
-        </button>
-    </div>
-
-
+    <form action="/logout" method="POST">
+        @csrf
+        <div class="d-flex justify-content-center mt-5">
+            <button class="btn btn-lg btn-danger" type="submit">
+                <img src="/images/Icons/logOut.png" alt=""> Log out
+            </button>
+        </div>
+    </form>
 @endsection
