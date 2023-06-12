@@ -22,9 +22,15 @@ use App\Http\Controllers\GameCategoryController;
 |
 */
 
+Route::get('/', function () {
+    return redirect('/home');
+});
+
 Route::get('/forgot-password', [Controller::class, 'forgotpw']);
 Route::get('/forgot-password-confirm', [Controller::class, 'forgotpwConfirm']);
 Route::get('/login', [Controller::class, 'loginPage']);
+Route::post('/login', [Controller::class, 'loginUser']);
+Route::post('/logout', [Controller::class, 'logout']);
 Route::get('/sign-up', [Controller::class, 'signup']);
 Route::get('/sign-up-confirm', [Controller::class, 'signupConfirm']);
 
@@ -51,7 +57,7 @@ Route::get('/detail-transaction-ticket', [TransactionController::class, 'DetailT
 Route::get('/detail-transaction-topup', [TransactionController::class, 'DetailTransactionTopup']);
 
 Route::get('/modal', [GameCategoryController::class, 'Modal']);
-// coming soon 
+// coming soon
 
 Route::get('/valo-tour', [GameCategoryController::class, 'Valorant']);
 Route::get('/mole-tour', [GameCategoryController::class, 'MobileLegend']);

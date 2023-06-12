@@ -20,8 +20,9 @@ return new class extends Migration
             $table->date('date_of_birth');
             $table->string('gender');
             $table->string('phone_number');
-            $table->rememberToken();
-            $table->timestamps();
+            $table->dateTime('created_at');
+            $table->dateTime('updated_at')->nullable();
+            $table->dateTime('deleted_at')->nullable();
         });
     }
 

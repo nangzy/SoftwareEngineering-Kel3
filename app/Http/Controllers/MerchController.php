@@ -9,7 +9,7 @@ class MerchController extends Controller
     //
     public function buyMerch() {
         return view ('buy.buyMerch', [
-
+            'active' => 'merch'
         ]);
     }
 

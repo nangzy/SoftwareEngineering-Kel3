@@ -6,6 +6,26 @@ body {
     margin: 0;
 }
 
+.nav-item-button {
+    border-radius: 0.5rem;
+}
+
+.nav-item-button:hover {
+    background-color: #1f3048;
+}
+
+.nav-item-image:hover {
+    opacity: 0.7;
+}
+
+.active {
+    color: #d23d4b;
+}
+
+.inactive {
+    color: white;
+}
+
 .warna-abu {
     color: #D9D9D9;
 }

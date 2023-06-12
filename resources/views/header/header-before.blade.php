@@ -12,51 +12,53 @@
         </button>
     </div>
 </li>
-<li class="nav-item">
+<li class="nav-item nav-item-button">
     <a class="d-flex justify-content-center align-items-center nav-link text-white full-width-accordion-item"
-        href="#">
-        Home
+       href="/">
+        <span class="{{ $active == 'home' ? 'active' : 'inactive' }}">Home</span>
     </a>
 </li>
-<li class="nav-item">
+<li class="nav-item nav-item-button">
     <a class="d-flex justify-content-center align-items-center nav-link text-white full-width-accordion-item"
-        href="#">
-        Valorant
+       href="/valo-tour">
+        <span class="{{ $active == 'valorant' ? 'active' : 'inactive' }}">Valorant</span>
     </a>
 </li>
-<li class="nav-item">
+<li class="nav-item nav-item-button">
     <a class="d-flex justify-content-center align-items-center nav-link text-white full-width-accordion-item"
-        href="#">
-        Mobile Legends
+       href="/mole-tour">
+        <span class="{{ $active == 'mole' ? 'active' : 'inactive' }}">Mobile Legends</span>
     </a>
 </li>
-<li class="nav-item">
+<li class="nav-item nav-item-button">
     <a class="d-flex justify-content-center align-items-center nav-link text-white full-width-accordion-item"
-        href="#">
-        Merch
+       href="/buy-merch">
+        <span class="{{ $active == 'merch' ? 'active' : 'inactive' }}">Merch</span>
     </a>
 </li>
-<li class="nav-item">
+<li class="nav-item nav-item-button">
     <a class="d-flex justify-content-center align-items-center nav-link text-white full-width-accordion-item"
-        href="#">
-        Ticket
+       href="/buy-ticket">
+        <span class="{{ $active == 'ticket' ? 'active' : 'inactive' }}">Ticket</span>
     </a>
 </li>
-<li class="nav-item">
+<li class="nav-item nav-item-button">
     <a class="d-flex justify-content-center align-items-center nav-link text-white full-width-accordion-item"
-        href="#">
-        Top Up
+       href="/topup-cat">
+        <span class="{{ $active == 'top_up' ? 'active' : 'inactive' }}">Top Up</span>
     </a>
 </li>
-<li class="nav-item">
+<li class="nav-item nav-item-button">
     <a class="d-flex justify-content-center align-items-center nav-link text-white full-width-accordion-item"
         href="#">
         Notification
     </a>
 </li>
 <li class="nav-item">
-    <button type="button" class="btn btn-outline-danger"><a href="#"><img src="/images/icons/Login.png" alt="login"> Log In
-    </a></button>
+    <a class="btn btn-outline-danger" href="/login">
+        <img src="/images/icons/Login.png" alt="login">
+        Log In
+    </a>
 </li>
 {{--    yg di bawah ini bisa diuncomment pas beackend udh jadi, ini buat klo udah login--}}
 {{--    <li class="nav-item">--}}
