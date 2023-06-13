@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
             'email' => 'nobert@gmail.com',
             'password' => Hash::make('nobert123'),
             'date_of_birth' => '1993-09-29',
-            'gender' => 'male',
+            'gender' => 'M',
             'phone_number' => '08123456789',
             'created_at' => $nowDate
         ]);
@@ -31,7 +31,7 @@ class UserSeeder extends Seeder
             'email' => 'krusty@gmail.com',
             'password' => Hash::make('krusty123'),
             'date_of_birth' => '2003-12-24',
-            'gender' => 'male',
+            'gender' => 'F',
             'phone_number' => '08123476589',
             'created_at' => $nowDate
         ]);
