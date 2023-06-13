@@ -3,7 +3,7 @@
 @section('content')
 <div class="d-flex container-fluid col-11">
     <div>
-        <a href="#"><img src="/images/Icons/Vector.png" alt="tanda-panah" class="img-fluid"></a>
+        <a href="/home"><img src="/images/Icons/Vector.png" alt="tanda-panah" class="img-fluid"></a>
     </div>
 
     <div class="container-fluid col-11">
@@ -23,7 +23,7 @@
         </div>
 
         <div class="mt-3 d-flex justify-content-center">
-            <img src="/images/others/{{ $news->image }}.png" alt="news" class="img-fluid">
+            <img src="/images/others/{{ $news->image }}.png" alt="news" class="img-fluid" style="width: 50rem; height: auto;">
         </div>
         @php($contentSplit=explode("\n", $news->content))
         <div class="text-white fs-6 text-justify my-5 ">
