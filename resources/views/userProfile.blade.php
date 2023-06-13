@@ -18,26 +18,26 @@
             <img src="/images/devan.png" alt="devan">
         </div>
 
-        <div class="container-fluid d-flex justify-content-center col-6 border border-light">
+        <div class="container-fluid d-flex justify-content-center col-6 border border-light" style="border-radius: 1rem;">
             <div class="fs-5 fw-semibold d-flex container-fluid justify-content-between">
                 <table class="table table-borderless">
-                    <tbody class="warna-abu stroke-putih">
+                    <tbody class="warna-abu">
                         <tr>
                           <th>Nama</th>
                           {{-- ubah dibawah sini --}}
-                          <th>{{ Session::get('loginUser')->name ?? '[name here]' }}</th>
+                          <th>{{ Session::get('loginUser')->name }}</th>
                         </tr>
 
                         <tr>
                             <th>Date of Birth</th>
                             {{-- ubah dibawah sini --}}
-                            <th>{{ Session::get('loginUser')->date_of_birth ?? '[date of birth here]' }}</th>
+                            <th>{{ Session::get('loginUser')->date_of_birth }}</th>
                         </tr>
 
                         <tr>
                             <th>Gender</th>
                             {{-- ubah dibawah sini --}}
-                            <th>{{ Session::get('loginUser')->gender ?? '[gender here]' }}</th>
+                            <th>{{ Session::get('loginUser')->gender == 'M' ? 'Male' : 'Female' }}</th>
                         </tr>
 
                         <tr>
@@ -49,7 +49,7 @@
                         <tr>
                           <th>Phone Number</th>
                           {{-- ubah dibawah sini --}}
-                          <th>{{ Session::get('loginUser')->phone_number ?? '[phone number here]' }}</th>
+                          <th>{{ Session::get('loginUser')->phone_number }}</th>
                         </tr>
                     </tbody>
 
@@ -58,7 +58,7 @@
         </div>
 
         <div class="d-flex justify-content-center mt-3">
-            <a href="#" class="text-decoration-none"><button type="submit" class="btn btn-lg btn-danger shadow m-3 fw-semibold" style="--bs-btn-padding-x: 3rem"> Edit Profile</button></a>
+            <a href="/{{ Session::get('loginUser')->id }}/user-profile-edit" class="btn btn-lg btn-danger shadow m-3 fw-semibold text-decoration-none" style="--bs-btn-padding-x: 3rem"> Edit Profile</a>
         </div>
     </div>
 

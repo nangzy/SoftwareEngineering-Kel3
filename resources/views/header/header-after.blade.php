@@ -56,11 +56,11 @@
 </li>
 <li class="nav-item nav-item-image ms-2 p-1">
     @if($active == 'user_profile')
-        <a href="/user-profile">
+        <a href="/{{ Session::get('loginUser')->id }}/user-profile">
             <img src="/images/icons/active_account.png" alt="acc" style="width: 45%;">
         </a>
     @else
-        <a href="/user-profile">
+        <a href="/{{ Session::get('loginUser')->id }}/user-profile">
             <img src="/images/icons/account.png" alt="acc" style="width: 45%;">
         </a>
     @endif

@@ -47,7 +47,9 @@ Route::post('/sign-up', [Controller::class, 'signUpUser']);
 Route::get('/sign-up-confirm', [Controller::class, 'signupConfirm']);
 
 // user profile
-Route::get('/user-profile', [Controller::class, 'userProfile']);
+Route::get('/{user_id}/user-profile', [Controller::class, 'userProfile']);
+Route::get('/{user_id}/user-profile-edit', [Controller::class, 'userProfileEditGet']);
+Route::post('/{user_id}/user-profile-edit', [Controller::class, 'userProfileEdit']);
 
 // ticket
 Route::get('/buy-ticket', [TicketController::class, 'buyTicket']);
