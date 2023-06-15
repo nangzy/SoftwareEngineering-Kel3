@@ -20,23 +20,24 @@
         </div>
 
         <div class="p-5 d-flex justify-content-center">
-            <a href="/top-up" class="text-decoration-none">
-                <div class="border-merah-75 rounded-4 mx-5" style="margin-right: 15rem">
-                    <div>
-                        <img src="/images/others/image 20.png" alt="Valorant">
-                    </div>
-                    <div class="fs-3 text-white d-flex justify-content-center align-items-center p-4">
-                        Valorant
-                    </div>
-                </div>
-            </a>
-            <a href="/top-up" class="text-decoration-none">
+            <a href="/top-up/1" class="text-decoration-none">
                 <div class="border-merah-75 rounded-4 mx-5">
                     <div>
                         <img src="/images/others/image 21.png" alt="MobileLegend">
                     </div>
                     <div class="fs-3 text-white d-flex justify-content-center align-items-center p-4">
                         Mobile Legend
+                    </div>
+                </div>
+            </a>
+
+            <a href="/top-up/2" class="text-decoration-none">
+                <div class="border-merah-75 rounded-4 mx-5" style="margin-right: 15rem">
+                    <div>
+                        <img src="/images/others/image 20.png" alt="Valorant">
+                    </div>
+                    <div class="fs-3 text-white d-flex justify-content-center align-items-center p-4">
+                        Valorant
                     </div>
                 </div>
             </a>
