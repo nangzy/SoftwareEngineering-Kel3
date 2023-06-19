@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\GameCategory;
 use Illuminate\Http\Request;
 
 class TopUpController extends Controller
 {
     //
-    public function Topup() {
+    public function Topup(GameCategory $game_cat) {
         return view('buy.topUp', [
-            'active' => 'top_up'
+            'active' => 'top_up',
+            'game_cat' => $game_cat
         ]);
     }
 

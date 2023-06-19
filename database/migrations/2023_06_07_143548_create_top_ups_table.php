@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('top_ups', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('category_id'); // 1 = mobile legends, 2 = valorant (jadi FK)
+            $table->unsignedBigInteger('game_category_id'); // 1 = mobile legends, 2 = valorant (jadi FK)
+            $table->string('image');
             $table->unsignedBigInteger('quantity');
             $table->unsignedBigInteger('price');    
             $table->string('in_game_id')->nullable();
@@ -21,7 +22,7 @@ return new class extends Migration
             $table->string('riot_id')->nullable();
             $table->timestamps();
 
-            $table->foreign('category_id')->references('id')->on('game_categories')->onDelete('cascade');
+            $table->foreign('game_category_id')->references('id')->on('game_categories')->onDelete('cascade');
         });
     }
 

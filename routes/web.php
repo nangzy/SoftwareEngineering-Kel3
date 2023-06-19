@@ -64,7 +64,7 @@ Route::post('/merch-cat', [MerchController::class, 'merchPayment']);
 Route::post('/{merch_id}/detail-buy-merch', [MerchController::class, 'detailMerch']);
 
 // top up
-Route::get('/top-up', [TopUpController::class, 'Topup']);
+Route::get('/top-up/{game_cat:id}', [TopUpController::class, 'topUp']);
 Route::get('/topup-cat', [TopUpController::class, 'TopCat']);
 
 // transactions

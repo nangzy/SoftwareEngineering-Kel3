@@ -11,10 +11,14 @@
 @section('content')
     <div class="container-fluid col-11 mt-3 mb-3 d-flex justify-content-between align-items-center">
         <div class="">
-            <a href=""><img src="/images/Icons/Vector.png" alt="back"></a>
+            <button class="btn shadow text-decoration-none back-button" onclick="history.back()" style="color: #ff4654; background-color: #0f1722;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                </svg>
+            </button>
         </div>
         <div class="fs-3 fw-semibold text-light">
-            Top Up Valorant
+            Top Up {{ $game_cat->game }}
         </div>
         <div>
             &nbsp;
@@ -34,71 +38,29 @@
                 </div>
 
                 {{-- loop bagian sini; button belom active --}}
-                <div class="row">
-                    <div class="col d-flex justify-content-center">
-                        <div class="col-10 d-flex justify-content-center">
-                            <div class="border border-light py-1">
-                                <div>
-                                    <img src="/images/Top Up/VPoin.png" alt="vp" class="img-fluid">
-                                </div>
-                                <div class="fs-5 d-flex justify-content-center px-0">
-                                    125 Points
-                                </div>
+                <div class="row row-cols-5">
+                    @foreach ($game_cat->topups as $topup)
+                    <div class="col">
+                        <div class="d-flex justify-content-center">
+                            <div class="col-10 d-flex justify-content-center">
+                                <button class="btn btn-outline-danger p-3 px-4 mb-3 mt-3 rounded">
+                                    <div>
+                                        <div>
+                                            <img src="/images/Top Up/{{ $topup->image }}.png" alt="vp" style="width: 4rem; height: 4rem; object-fit: cover">
+                                        </div>
+                                        <div class="fs-5 d-flex justify-content-center px-0">
+                                            {{ $topup->quantity }}
+                                        </div>
+                                    </div>
+                                </button>
                             </div>
                         </div>
                     </div>
-                    <div class="col d-flex justify-content-center">
-                        <div class="col-10 d-flex justify-content-center">
-                            <div class="border border-light py-1">
-                                <div>
-                                    <img src="/images/Top Up/VPoin.png" alt="vp" class="img-fluid">
-                                </div>
-                                <div class="fs-5 d-flex justify-content-center px-0">
-                                    125 Points
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col d-flex justify-content-center">
-                        <div class="col-10 d-flex justify-content-center">
-                            <div class="border border-light py-1">
-                                <div>
-                                    <img src="/images/Top Up/VPoin.png" alt="vp" class="img-fluid">
-                                </div>
-                                <div class="fs-5 d-flex justify-content-center px-0">
-                                    125 Points
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col d-flex justify-content-center">
-                        <div class="col-10 d-flex justify-content-center">
-                            <div class="border border-light py-1">
-                                <div>
-                                    <img src="/images/Top Up/VPoin.png" alt="vp" class="img-fluid">
-                                </div>
-                                <div class="fs-5 d-flex justify-content-center px-0">
-                                    125 Points
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col d-flex justify-content-center">
-                        <div class="col-10 d-flex justify-content-center">
-                            <div class="border border-light py-1">
-                                <div>
-                                    <img src="/images/Top Up/VPoin.png" alt="vp" class="img-fluid">
-                                </div>
-                                <div class="fs-5 d-flex justify-content-center px-0">
-                                    125 Points
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </form>
 
-            <div class="d-flex align-items-center justify-content-end warna-abu stroke-putih mt-5">
+            <div class="d-flex align-items-center justify-content-end warna-abu stroke-putih">
                 <div class="col-4">
                     <select class="form-select btn btn-lg btn-danger text-light fw-semibold" aria-label=".form-select payment">
                         <option selected>Payment Method</option>
@@ -112,6 +74,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 
 @endsection
