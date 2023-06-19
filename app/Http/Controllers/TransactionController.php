@@ -37,7 +37,23 @@ class TransactionController extends Controller
             })->first();
         }
         else if ($item_category == 'ticket') {
+            $ticketDetail = (new TicketController)->getTicketDetail($item_id);
 
+            $itemData = collect($ticketDetail)->map(function ($i) use ($generateRandNumber, $nowDateFormatted, $nowDate, $request) {
+                $i->chosen_quantity = $request->chosen_quantity;
+                $i->subtotal = $request->subtotal;
+                $i->shipping_method = $request->shipping_method;
+                $i->shipping_cost = $request->shipping_cost;
+                $i->tax = $request->tax;
+                $i->discount = $request->discount;
+                $i->endtotal = $request->endtotal;
+                $i->payment_method = $request->payment_method;
+                $i->transaction_date = $nowDate;
+                $i->transaction_date_formatted = date('d F Y', strtotime
+                ($nowDate));
+                $i->invoice = "INV/$nowDateFormatted/MPL/$generateRandNumber";
+                return $i;
+            })->first();
         }
         else if ($item_category == 'top_up') {
 

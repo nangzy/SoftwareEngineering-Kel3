@@ -57,7 +57,7 @@
             <div class="container-fluid rounded-4 bg-merah-terang-20 warna-abu ms-5">
                 <div class="btn btn-sm btn-danger shadow m-3 fw-semibold text-dark rounded text-decoration-none" style="--bs-btn-padding-x: 1rem">
                     {{-- category --}}
-                    {{ $merchDetail->category_id == 1 ? 'Valorant' : 'MLBB' }}
+                    {{ $merchDetail->category_id == 1 ? 'MLBB' : 'Valorant' }}
                 </div>
                 <div class="fs-2 stroke-putih">
                     {{-- Judul --}}
@@ -121,9 +121,34 @@
                 </div>
                 <div class="d-flex align-items-center justify-content-end warna-abu stroke-putih">
                     <div class="">
-                        <button type="submit" class="btn btn-lg btn-danger shadow m-3 fw-semibold text-light text-decoration-none" style="--bs-btn-padding-x: 1.5rem">
-                            Buy Now
-                        </button>
+                        @if(Session::has('loginUser'))
+                            <button type="submit" class="btn btn-lg btn-danger shadow m-3 fw-semibold text-light text-decoration-none" style="--bs-btn-padding-x: 1.5rem">
+                                Buy Now
+                            </button>
+                        @else
+                            <div class="btn btn-lg btn-danger shadow m-3 fw-semibold text-light text-decoration-none" data-bs-target="#isNotLoggedIn" data-bs-toggle="modal" data-bs-dismiss="modal">Buy Now</div>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="isNotLoggedIn" aria-hidden="true" aria-labelledby="user_not_logged_in" tabindex="-1">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+                <div class="modal-content" style="background-color: #515151;">
+                    <div class="modal-body text-center">
+                        <img src="{{ asset('/images/Icons/warning.png') }}" alt="warning">
+                        <div class="fs-4 mt-5" style="color: #dddddd;">
+                            You need to have an account first! Sign up now!
+                        </div>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <form action="/sign-up" method="get">
+                            @csrf
+                            <input type="text" name="is_logged_in" value="{{ Session::get('loginUser')->user_id ?? Crypt::encrypt('no') }}" style="display: none;">
+
+                            <button class="btn btn-danger shadow m-3 fw-semibold text-light text-decoration-none" data-bs-dismiss="modal">Create Account</button>
+                        </form>
                     </div>
                 </div>
             </div>

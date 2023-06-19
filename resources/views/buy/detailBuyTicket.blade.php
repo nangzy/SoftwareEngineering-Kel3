@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-    <form action="/{{ $active }}/{{ $merchId }}/payment-page" method="POST">
+    <form action="/{{ $active }}/{{ $ticketId }}/payment-page" method="POST">
         @csrf
         <div class="ms-5">
             <button class="btn shadow text-decoration-none back-button" onclick="history.back()" style="color: #ff4654; background-color: #0f1722;">
@@ -69,28 +69,18 @@
             <div class="container-fluid rounded-4 col-5 bg-merah-terang-20 warna-abu">
                 <div class="d-flex px-1 pt-3 pb-5">
                     <div class="col-3">
-                        @if($merchDetailPayment->id == 1)
-                            <img src="/images/Merch/evos.png" alt="Valorant" class="rounded-4" style="width: 8rem;">
-                        @elseif($merchDetailPayment->id == 2)
-                            <img src="/images/Merch/rrq.png" alt="MobileLegend" class="rounded-4" style="width: 8rem;">
+                        @if($ticketDetailPayment->id == 1)
+                            <img src="/images/Matches/Ticket1.png" alt="ticket" class="img-fluid" style="width: 100%;">
+                        @elseif($ticketDetailPayment->id == 2)
+                            <img src="/images/Matches/cat2.png" alt="ticket" class="img-fluid" style="width: 100%;">
                         @else
-                            <img src="/images/Merch/onic.png" alt="MobileLegend" class="rounded-4" style="width: 8rem;">
+                            <img src="/images/Matches/cat3.png" alt="ticket" class="img-fluid" style="width: 100%;">
                         @endif
                     </div>
                     <div class="col-5 px-3">
                         <div class="fs-2">
                             {{-- Judul --}}
-                            {{ $merchDetailPayment->merch_name }}
-                        </div>
-                        <div class="fs-4 pt-2 pb-0 d-flex">
-                            {{-- size  --}}
-                            <div class="col">
-                                Size
-                            </div>
-                            <div class="col d-flex justify-content-end">
-                                {{ $merchDetailPayment->chosen_size }}
-                                <input type="text" name="chosen_size" value="{{ $merchDetailPayment->chosen_size }}" style="display: none;">
-                            </div>
+                            {{ $ticketDetailPayment->ticket_name }}
                         </div>
                         <div class="fs-4 pt-2 pb-2 d-flex">
                             {{-- harga  --}}
@@ -98,14 +88,14 @@
                                 Quantity
                             </div>
                             <div class="col d-flex justify-content-end">
-                                {{ $merchDetailPayment->chosen_quantity }}
-                                <input type="number" name="chosen_quantity" value="{{ $merchDetailPayment->chosen_quantity }}" style="display: none;">
+                                {{ $ticketDetailPayment->chosen_quantity }}
+                                <input type="number" name="chosen_quantity" value="{{ $ticketDetailPayment->chosen_quantity }}" style="display: none;">
                             </div>
                         </div>
                     </div>
                     <div class="col-3 px-3 fs-3 pt-2">
                         <div class="tulisan-merah-terang">
-                            {{ $merchDetailPayment->price_indo }}
+                            {{ $ticketDetailPayment->price_indo }}
                         </div>
                     </div>
                 </div>
@@ -127,8 +117,8 @@
                             Subtotal
                         </div>
                         <div class="mt-3">
-                            {{ 'Rp'.number_format($merchDetailPayment->subtotal, 0, ",", ".") }}
-                            <input type="number" name="subtotal" value="{{ $merchDetailPayment->subtotal }}" style="display: none;">
+                            {{ 'Rp'.number_format($ticketDetailPayment->subtotal, 0, ",", ".") }}
+                            <input type="number" name="subtotal" value="{{ $ticketDetailPayment->subtotal }}" style="display: none;">
                         </div>
                     </div>
 
@@ -137,8 +127,8 @@
                             Shipping Cost
                         </div>
                         <div class="mt-3" id="shipping_cost">
-                            {{ 'Rp'.number_format($merchDetailPayment->shipping_cost, 0, ",", ".") }}
-                            <input type="number" name="shipping_cost" value="{{ $merchDetailPayment->shipping_cost }}" style="display: none;">
+                            {{ 'Rp'.number_format($ticketDetailPayment->shipping_cost, 0, ",", ".") }}
+                            <input type="number" name="shipping_cost" value="{{ $ticketDetailPayment->shipping_cost }}" style="display: none;">
                         </div>
                     </div>
 
@@ -147,8 +137,8 @@
                             Estimated Taxes
                         </div>
                         <div class="mt-3">
-                            {{ 'Rp'.number_format($merchDetailPayment->tax, 0, ",", ".") }}
-                            <input type="number" name="tax" value="{{ $merchDetailPayment->tax }}" style="display: none;">
+                            {{ 'Rp'.number_format($ticketDetailPayment->tax, 0, ",", ".") }}
+                            <input type="number" name="tax" value="{{ $ticketDetailPayment->tax }}" style="display: none;">
                         </div>
                     </div>
 
@@ -157,8 +147,8 @@
                             Discount
                         </div>
                         <div class="mt-3">
-                            {{ 'Rp'.number_format($merchDetailPayment->discount, 0, ",", ".") }}
-                            <input type="number" name="discount" value="{{ $merchDetailPayment->discount }}" style="display: none;">
+                            {{ 'Rp'.number_format($ticketDetailPayment->discount, 0, ",", ".") }}
+                            <input type="number" name="discount" value="{{ $ticketDetailPayment->discount }}" style="display: none;">
                         </div>
                     </div>
 
@@ -167,8 +157,8 @@
                             Total
                         </div>
                         <div class="mt-3">
-                            {{ 'Rp'.number_format($merchDetailPayment->endtotal, 0, ",", ".") }}
-                            <input type="number" name="endtotal" value="{{ $merchDetailPayment->endtotal }}" style="display: none;">
+                            {{ 'Rp'.number_format($ticketDetailPayment->endtotal, 0, ",", ".") }}
+                            <input type="number" name="endtotal" value="{{ $ticketDetailPayment->endtotal }}" style="display: none;">
                         </div>
                     </div>
                 </div>

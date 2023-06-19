@@ -52,9 +52,11 @@ Route::get('/{user_id}/user-profile-edit', [Controller::class, 'userProfileEditG
 Route::post('/{user_id}/user-profile-edit', [Controller::class, 'userProfileEdit']);
 
 // ticket
-Route::get('/buy-ticket', [TicketController::class, 'buyTicket']);
+Route::get('/{ticket_id}/buy-ticket', [TicketController::class, 'buyTicket']);
+Route::post('/{ticket_id}/buy-ticket', [TicketController::class, 'buyTicketDetail']);
 Route::get('/ticket-cat', [TicketController::class, 'ticketCat']);
-Route::get('/success-payment-ticket', [TicketController::class, 'SuccessTicket']);
+Route::post('/ticket-cat', [TicketController::class, 'ticketPayment']);
+Route::post('/{ticket_id}/detail-buy-ticket', [TicketController::class, 'detailTicket']);
 
 // merch
 Route::get('/{merch_id}/buy-merch', [MerchController::class, 'buyMerch']);
