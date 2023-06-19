@@ -125,8 +125,41 @@ class Controller extends BaseController
 
     public function userProfile(){
         return view('userProfile',[
-            'active' => 'user_profile'
+            'active' => 'user_profile',
         ]);
+    }
+
+    public function userProfileEditGet($validateUserInput = null) {
+        return view('edit-profile', [
+            'active' => 'user_profile',
+            'validateUserInput' => $validateUserInput
+        ]);
+    }
+
+    public function userProfileEdit($user_id, Request $request) {
+        if (!filter_var($request->email, FILTER_VALIDATE_EMAIL)) {
+            return $this->userProfileEditGet('wrong_email_format');
+        }
+
+        $nowDate = now()->timezone('Asia/Jakarta')->format('Y-m-d H:i:s');
+
+        $user = User::find($user_id);
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->date_of_birth = date($request->date_of_birth);
+        $user->gender = $request->gender;
+        $user->phone_number = $request->phone_number;
+        $user->updated_at = $nowDate;
+
+        $user->save();
+
+        $request->session()->put(
+            'loginUser', $user
+        );
+        $request->session()->regenerate();
+
+        return redirect("/$user_id/user-profile");
     }
 
     public function viewNotification() {
