@@ -132,28 +132,28 @@
                 </div>
             </div>
         </div>
+    </form>
 
-        <div class="modal fade" id="isNotLoggedIn" aria-hidden="true" aria-labelledby="user_not_logged_in" tabindex="-1">
-            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
-                <div class="modal-content" style="background-color: #515151;">
-                    <div class="modal-body text-center">
-                        <img src="{{ asset('/images/Icons/warning.png') }}" alt="warning">
-                        <div class="fs-4 mt-5" style="color: #dddddd;">
-                            You need to have an account first! Sign up now!
-                        </div>
+    <div class="modal fade" id="isNotLoggedIn" aria-hidden="true" aria-labelledby="user_not_logged_in" tabindex="-1">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content" style="background-color: #515151;">
+                <div class="modal-body text-center">
+                    <img src="{{ asset('/images/Icons/warning.png') }}" alt="warning">
+                    <div class="fs-4 mt-5" style="color: #dddddd;">
+                        You need to have an account first! Sign up now!
                     </div>
-                    <div class="modal-footer d-flex justify-content-center">
-                        <form action="/sign-up" method="get">
-                            @csrf
-                            <input type="text" name="is_logged_in" value="{{ Session::get('loginUser')->user_id ?? Crypt::encrypt('no') }}" style="display: none;">
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <form action="/sign-up" method="get">
+                        @csrf
+                        <input type="text" name="is_logged_in" value="{{ Session::get('loginUser')->user_id ?? Crypt::encrypt('no') }}" style="display: none;">
 
-                            <button class="btn btn-danger shadow m-3 fw-semibold text-light text-decoration-none" data-bs-dismiss="modal">Create Account</button>
-                        </form>
-                    </div>
+                        <button class="btn btn-danger shadow m-3 fw-semibold text-light text-decoration-none" data-bs-dismiss="modal">Create Account</button>
+                    </form>
                 </div>
             </div>
         </div>
-    </form>
+    </div>
 @endsection
 {{-- belom di dropdown sama quantitynya belom bisa nambah --}}
 

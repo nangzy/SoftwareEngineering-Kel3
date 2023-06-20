@@ -71,53 +71,71 @@
                 <div class="tulisan-merah-terang fs-5 mb-3">
                     Recent Transaction
                 </div>
-                <div class="fs-5 fw-semibold container-fluid border border-light bg-merah-terang-20 p-4">
-                    <div class="rounded-pill bg-merah-terang text-dark mb-3 fs-6" style="padding: .25rem 1rem; display:inline-block;">
-                        Merch
+
+                @php($counter = 0)
+                @foreach($transactions as $transactionKey => $transactionValue)
+                    @if($counter == 2)
+                        @break
+                    @endif
+
+                    <div class="fs-5 fw-semibold container-fluid border border-light bg-merah-terang-20 p-4 mb-3">
+                        <div class="rounded-pill bg-merah-terang text-dark mb-3 fs-6" style="padding: .25rem 1rem; display:inline-block;">
+                            @if($transactionValue->transaction_type == 1)
+                                Ticket
+                            @elseif($transactionValue->transaction_type == 2)
+                                Merch
+                            @else
+                                Top Up
+                            @endif
+                        </div>
+
+                        <div class="d-flex container-fluid justify-content-between warna-abu stroke-putih">
+                            <div>
+                                Product
+                            </div>
+                            <div>
+                                {{ $transactionValue->item_name ?? $transactionValue->event_name }}
+                            </div>
+                        </div>
+
+                        <div class="d-flex container-fluid justify-content-between warna-abu stroke-putih">
+                            <div>
+                                Price
+                            </div>
+                            <div>
+                                {{ $transactionValue->real_price }}
+                            </div>
+                        </div>
+
+                        <div class="d-flex container-fluid justify-content-between warna-abu stroke-putih">
+                            <div>
+                                Quantity
+                            </div>
+                            <div>
+                                {{ $transactionValue->quantity }}
+                            </div>
+                        </div>
+
+                        <div class="d-flex container-fluid justify-content-between warna-abu stroke-putih">
+                            <div>
+                                Total Price
+                            </div>
+                            <div>
+                                {{ $transactionValue->ind_price }}
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="d-flex container-fluid justify-content-between warna-abu stroke-putih">
-                        <div>
-                            Product
-                        </div>
-                        <div>
-                            EVOS Jersey
-                        </div>
-                    </div>
-
-                    <div class="d-flex container-fluid justify-content-between warna-abu stroke-putih">
-                        <div>
-                            Price
-                        </div>
-                        <div>
-                            Rp315.000
-                        </div>
-                    </div>
-
-                    <div class="d-flex container-fluid justify-content-between warna-abu stroke-putih">
-                        <div>
-                            Quantity
-                        </div>
-                        <div>
-                            1
-                        </div>
-                    </div>
-
-                    <div class="d-flex container-fluid justify-content-between warna-abu stroke-putih">
-                        <div>
-                            Total Price
-                        </div>
-                        <div>
-                            Rp315.000
-                        </div>
-                    </div>
-                </div>
-        </div>
+                    @php($counter++)
+                @endforeach
+            </div>
         </div>
         <div class="d-flex justify-content-center fs-5 mt-3">
-            <a href="#" class="text-decoration-none tulisan-merah-terang">
-                See All
-            </a>
+            <form action="/{{ Session::get('loginUser')->id }}/detail-transaction-ticket" method="get">
+                <button type="submit" class="remove-button-decoration tulisan-merah-terang see-all-btn">
+                    See All
+                </button>
+            </form>
         </div>
         <div>
             &nbsp;

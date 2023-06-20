@@ -24,68 +24,80 @@
         Detail Transaction
     </div>
 
-
-    <!-- belom ada activenya -->
-
     <div class="container-fluid col-11 d-flex">
         <div class="">
-            <button class="btn btn-danger btn-sm text-dark rounded-pill fw-semibold me-4 px-3" type="button">Ticket</button>
+            <form action="/{{ Session::get('loginUser')->id }}/detail-transaction-ticket" method="get">
+                <button type="submit" class="btn btn-danger btn-sm rounded-pill fw-semibold me-4 px-3 {{ $active_category == 'ticket' ? 'active-category' : 'inactive-category' }}">Ticket</button>
+            </form>
         </div>
 
         <div class="ml-3 mr-3">
-            <button class="btn btn-danger btn-sm text-dark rounded-pill fw-semibold mx-4 px-3" type="button">Merch</button>
+            <form action="/{{ Session::get('loginUser')->id }}/detail-transaction-merch" method="get">
+                <button type="submit" class="btn btn-danger btn-sm rounded-pill fw-semibold mx-4 px-3 {{ $active_category == 'merch' ? 'active-category' : 'inactive-category' }}">Merch</button>
+            </form>
         </div>
+
         <div class="">
-            <button class="btn btn-danger btn-sm text-dark rounded-pill fw-semibold ms-4 px-3" type="button">Top up</button>
+            <form action="/{{ Session::get('loginUser')->id }}/detail-transaction-topup" method="get">
+                <button type="submit" class="btn btn-danger btn-sm rounded-pill fw-semibold ms-4 px-3 {{ $active_category == 'topup' ? 'active-category' : 'inactive-category' }}">Top up</button>
+            </form>
         </div>
     </div>
 
-    <!-- loop mulai dari sini -->
+    @foreach($transactions as $transactionKey => $transactionValue)
+        <div class="d-flex container-fluid border border-abu-25 bg-merah-terang-20 rounded-4 col-11 mt-5 py-3">
+            <div class="col-3 d-flex justify-content-center">
+                @if($transactionValue->product_id == 1)
+                    <img src="/images/Matches/Ticket1.png" alt="ticket" class="img-fluid" style="width: 100%;">
+                @elseif($transactionValue->product_id == 2)
+                    <img src="/images/Matches/cat2.png" alt="ticket" class="img-fluid" style="width: 100%;">
+                @else
+                    <img src="/images/Matches/cat3.png" alt="ticket" class="img-fluid" style="width: 100%;">
+                @endif
+            </div>
 
-    <div class="d-flex container-fluid border border-abu-25 bg-merah-terang-20 rounded-4 col-11 mt-5 py-3">
-        <div class="col-3 d-flex justify-content-center">
-            <img src="/images/others/TicketMPL.png" alt="TicketMPL" class="img-fluid p-2">
-        </div>
+            <div class="col-6 px-3">
+                <div class="container-fluid px-0 flex-column d-flex align-items-start justify-content-start" style="height: 8rem">
+                    <div class="d-flex mb-auto">
+                        <div class="fs-6 warna-abu stroke-putih">
+                            {{ $transactionValue->transaction_date_formatted }}
+                        </div>
 
-        <div class="col-6 px-3">
-            <div class="container-fluid px-0 flex-column d-flex align-items-start justify-content-start" style="height: 8rem">
-                <div class="d-flex mb-auto">
-                    <div class="fs-6 warna-abu stroke-putih">
-                        01 March 2023
+                        <div>
+                            <div class="btn btn-sm btn-danger btn-sm text-dark rounded-pill fw-bold mx-3 px-3 py-0">Done</div>
+                        </div>
+
+                        <div class="fs-6 warna-abu stroke-putih">
+                            {{ $transactionValue->invoice }}
+                        </div>
+                    </div>
+                    <div class="fs-2 fw-bold text-light">
+                        {{ $transactionValue->event_name }}
                     </div>
 
-                    <div>
-                        <button class="btn btn-sm btn-danger btn-sm text-dark rounded-pill fw-bold mx-3 px-3 py-0" type="button">Done</button>
-                    </div>
-
                     <div class="fs-6 warna-abu stroke-putih">
-                        INV/20230301/MPL/109375922
+                        {{ $transactionValue->quantity }} Ticket x {{ $transactionValue->ind_real_price }}
                     </div>
                 </div>
-                <div class="fs-2 fw-bold text-light">
-                    MPL ID REGULER SEASON DAY 1 MATCH 1 - GEEK VS AE
-                </div>
+            </div>
 
-                <div class="fs-6 warna-abu stroke-putih">
-                    4 Ticket x Rp 75.000
+            <div class="col-3 d-flex justify-content-center align-items-center">
+                <div class="container-fluid warna-abu d-flex flex-column align-items-start stroke-putih border-start">
+                    <div class="ms-3">
+                        Total Expenses
+                    </div>
+                    <div class="m-3">
+                        {{ $transactionValue->ind_price }}
+                    </div>
+                    <div class="ms-3 mt-2">
+                        <form action="/ticket-cat" method="get">
+                            <button class="btn btn-danger rounded-3 fw-semibold px-3" type="submit">Buy Again</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="col-3 d-flex justify-content-center align-items-center">
-            <div class="container-fluid warna-abu d-flex flex-column align-items-start stroke-putih border-start">
-                <div class="ms-3">
-                    Total Expenses
-                </div>
-                <div class="m-3">
-                    Rp300.000
-                </div>
-                <div class="ms-3 mt-2">
-                    <button class="btn btn-danger rounded-3 fw-semibold px-3" type="button">Buy Again</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    @endforeach
 @endsection
 
 @section('footer')

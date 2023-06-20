@@ -76,6 +76,7 @@
                         @else
                             <img src="/images/Merch/onic.png" alt="MobileLegend" class="rounded-4" style="width: 8rem;">
                         @endif
+                        <input type="number" name="game_category_id" value="{{ $merchDetailPayment->category_id }}" style="display: none;">
                     </div>
                     <div class="col-5 px-3">
                         <div class="fs-2">

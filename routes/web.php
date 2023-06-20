@@ -72,10 +72,11 @@ Route::get('/topup-cat', [TopUpController::class, 'TopCat']);
 // transactions
 Route::post('/{item_category}/{item_id}/payment-page', [TransactionController::class, 'Payment']);
 Route::post('/{item_category}/{item_id}/payment-success', [TransactionController::class, 'paymentSuccess']);
+Route::get('/{user_id}/detail-transaction', [TransactionController::class, 'detailTransaction']);
 Route::get('/fail-payment', [TransactionController::class, 'failPayment']);
-Route::post('/{merch_id}/detail-transaction-merch', [TransactionController::class, 'DetailTransactionMerch']);
-Route::get('/detail-transaction-ticket', [TransactionController::class, 'DetailTransactionTicket']);
-Route::get('/detail-transaction-topup', [TransactionController::class, 'DetailTransactionTopup']);
+Route::get('/{merch_id}/detail-transaction-merch', [TransactionController::class, 'DetailTransactionMerch']);
+Route::get('/{user_id}/detail-transaction-ticket', [TransactionController::class, 'DetailTransactionTicket']);
+Route::get('/{user_id}/detail-transaction-topup', [TransactionController::class, 'DetailTransactionTopup']);
 Route::get('/success-payment-merch-ticket', [TransactionController::class, 'successPaymentMerchAndTicket']);
 
 // others

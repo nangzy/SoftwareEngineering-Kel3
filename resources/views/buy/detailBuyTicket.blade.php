@@ -76,11 +76,13 @@
                         @else
                             <img src="/images/Matches/cat3.png" alt="ticket" class="img-fluid" style="width: 100%;">
                         @endif
+                        <input type="number" name="game_category_id" value="{{ $ticketDetailPayment->category_id }}" style="display: none;">
                     </div>
                     <div class="col-5 px-3">
                         <div class="fs-2">
                             {{-- Judul --}}
                             {{ $ticketDetailPayment->ticket_name }}
+                            <input type="number" name="event_name" value="{{ $ticketDetailPayment->ticket_name }}" style="display: none;">
                         </div>
                         <div class="fs-4 pt-2 pb-2 d-flex">
                             {{-- harga  --}}
@@ -166,7 +168,7 @@
                 <div class="d-flex align-items-center justify-content-between warna-abu stroke-putih">
                     <div class="col-6">
                         <select name="payment_method" class="form-select btn btn-lg btn-danger text-light fw-semibold" aria-label=".form-select payment" required>
-                            <option selected>Payment Method</option>
+                            <option selected value="null">Payment Method</option>
                             <option value="QRIS">QRIS</option> {{-- nama payment method bisa berubah --}}
                             <option value="DANA">DANA</option>
                             <option value="OVO">OVO</option>
