@@ -10,6 +10,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class Controller extends BaseController
 {
@@ -124,8 +125,11 @@ class Controller extends BaseController
     }
 
     public function userProfile(){
+        $transactions = (new TransactionController)->transactions(Session::get('loginUser')->id);
+
         return view('userProfile',[
             'active' => 'user_profile',
+            'transactions' => $transactions
         ]);
     }
 

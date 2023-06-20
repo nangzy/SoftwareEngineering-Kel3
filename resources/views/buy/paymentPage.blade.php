@@ -17,6 +17,7 @@
 
         <input type="text" name="item_category" value="{{ $active }}" style="display: none;">
         <input type="number" name="item_id" value="{{ $itemId }}" style="display: none;">
+        <input type="number" name="game_category_id" value="{{ $itemData->game_category_id }}" style="display: none;">
 
         @if($active == 'merch')
             <div>
@@ -25,6 +26,7 @@
                 <input type="number" name="transaction_type" value="2" style="display: none;">
             </div>
         @elseif($active == 'ticket')
+            <input type="text" name="event_name" value="{{ $itemData->ticket_name }}" style="display: none;">
             <input type="number" name="transaction_type" value="1" style="display: none;">
         @else
             <input type="number" name="transaction_type" value="3" style="display: none;">
@@ -35,6 +37,8 @@
         <input type="text" name="invoice" value="{{ $itemData->invoice }}" style="display: none;">
         <input type="number" name="total_price" value="{{ $itemData->endtotal }}" style="display: none;">
         <input type="text" name="payment_method" value="{{ $itemData->payment_method }}" style="display: none;">
+        <input type="text" name="real_price" value="{{ $itemData->price }}" style="display: none;">
+        <input type="number" name="product_id" value="{{ $itemId }}" style="display: none;">
 
         <div class="container-fluid d-flex flex-column justify-content-center col-10 mt-5">
             <div class="container-fluid rounded-4 d-flex flex-column col-8 p-4 warna-abu stroke-putih mt-3 bg-merah-terang-20">
