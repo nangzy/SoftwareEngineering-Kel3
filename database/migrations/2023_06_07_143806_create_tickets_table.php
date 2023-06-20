@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('category_id'); // 1 = mobile legends, 2 = valorant (jadi FK)
+            $table->string('ticket_name');
             $table->unsignedBigInteger('quantity');
             $table->unsignedBigInteger('price');
             $table->longText('description');

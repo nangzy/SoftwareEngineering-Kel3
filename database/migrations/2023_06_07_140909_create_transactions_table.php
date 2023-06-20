@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('game_category_id');
+            $table->unsignedBigInteger('product_id');
             $table->string('item_name')->nullable(); // merch
             $table->string('size')->nullable(); // merch
             $table->string('event_name')->nullable(); // ticket
@@ -24,6 +26,7 @@ return new class extends Migration
             $table->unsignedBigInteger('quantity');
             $table->date('transaction_date');
             $table->unsignedBigInteger('transaction_type'); // 1 = ticket, 2 = merch, 3 = top up
+            $table->unsignedBigInteger('real_price');
             $table->unsignedBigInteger('total_price');
             $table->string('payment_method'); //Payment Method QRIS, DANA, OVO
             $table->timestamps();

@@ -52,9 +52,11 @@ Route::get('/{user_id}/user-profile-edit', [Controller::class, 'userProfileEditG
 Route::post('/{user_id}/user-profile-edit', [Controller::class, 'userProfileEdit']);
 
 // ticket
-Route::get('/buy-ticket', [TicketController::class, 'buyTicket']);
+Route::get('/{ticket_id}/buy-ticket', [TicketController::class, 'buyTicket']);
+Route::post('/{ticket_id}/buy-ticket', [TicketController::class, 'buyTicketDetail']);
 Route::get('/ticket-cat', [TicketController::class, 'ticketCat']);
-Route::get('/success-payment-ticket', [TicketController::class, 'SuccessTicket']);
+Route::post('/ticket-cat', [TicketController::class, 'ticketPayment']);
+Route::post('/{ticket_id}/detail-buy-ticket', [TicketController::class, 'detailTicket']);
 
 // merch
 Route::get('/{merch_id}/buy-merch', [MerchController::class, 'buyMerch']);
@@ -70,10 +72,11 @@ Route::get('/topup-cat', [TopUpController::class, 'TopCat']);
 // transactions
 Route::post('/{item_category}/{item_id}/payment-page', [TransactionController::class, 'Payment']);
 Route::post('/{item_category}/{item_id}/payment-success', [TransactionController::class, 'paymentSuccess']);
+Route::get('/{user_id}/detail-transaction', [TransactionController::class, 'detailTransaction']);
 Route::get('/fail-payment', [TransactionController::class, 'failPayment']);
-Route::post('/{merch_id}/detail-transaction-merch', [TransactionController::class, 'DetailTransactionMerch']);
-Route::get('/detail-transaction-ticket', [TransactionController::class, 'DetailTransactionTicket']);
-Route::get('/detail-transaction-topup', [TransactionController::class, 'DetailTransactionTopup']);
+Route::get('/{merch_id}/detail-transaction-merch', [TransactionController::class, 'DetailTransactionMerch']);
+Route::get('/{user_id}/detail-transaction-ticket', [TransactionController::class, 'DetailTransactionTicket']);
+Route::get('/{user_id}/detail-transaction-topup', [TransactionController::class, 'DetailTransactionTopup']);
 Route::get('/success-payment-merch-ticket', [TransactionController::class, 'successPaymentMerchAndTicket']);
 
 // others
